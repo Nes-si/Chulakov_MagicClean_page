@@ -6,7 +6,9 @@
   "description": "Brunch skeleton for monkeys, who are ready to make landing pages like monkeys",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"U u u a a a?\""
+    "start": "brunch watch --server",
+    "test": "brunch test",
+    "deploy": "brunch build -P && cp -r public public2 && git checkout gh-pages; yes | cp -rf public2/* .; rm -rf public2"
   },
   "keywords": [
     "brunch",
