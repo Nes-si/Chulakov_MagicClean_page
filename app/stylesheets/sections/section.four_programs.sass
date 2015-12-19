@@ -1,27 +1,24 @@
+@import '../_fonts'
+
 .section.four_programs
-  height: 597px
 
   .container
-    vertical-align: top
-
-    display: table
 
     .center-cont
-      vertical-align: middle
-      border: 1px dotted red
-      display: table-cell
+      //border: 1px dotted red
+      padding-top: 100px
+      padding-bottom: 80px
+
 
       .block-left
         text-align: left
         display: inline-block
         margin-right: 100px
-        border: 1px dotted blue
+        //border: 1px dotted blue
         vertical-align: top
 
-
-
         .block-left-1
-          font-family: Open Sans
+          font-family: $f_opens
           font-weight: 600
           font-size: 136.46px
           color: #e40000
@@ -30,9 +27,8 @@
           margin-right: 30px
 
         .block-left-2
-
           display: inline-block
-          font-family: Helvetica
+          font-family: $f_helvetica
           font-weight: 300
           vertical-align: middle
 
@@ -40,16 +36,35 @@
             text-transform: uppercase
             font-size: 35.1px
             margin-top: 10px
+            opacity: 0.9
 
           .block-left-2-2
             font-size: 16px
             margin-top: 10px
-
-
+            opacity: 0.7
 
 
       .block-right
         text-align: left
         display: inline-block
-        width: 400px
+        width: 600px
+        font-family: $f_helvetica
+        font-weight: 300
+
         opacity: 0.7
+
+        .block-right-1
+          font-size: 16px
+          line-height: 26px
+          strong
+            font-weight: 600
+
+        .block-right-2
+          background-image: url("../pics/section.four_programs.drop.svg")
+          background-repeat: no-repeat
+          background-position: 0 5px
+          margin-top: 50px
+          width: 360px
+          padding-left: 60px
+          font-size: 14px
+          line-height: 21px
