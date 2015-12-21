@@ -15,9 +15,6 @@ $ ->
 
   controller = new ScrollMagic.Controller
 
-  caption1 = new TimelineMax()
-  .add(TweenMax.to($('.section.main_car_animation .caption'), 1, {'transform': 'translate3D(0,-250px,0)'}))
-
   scene = new ScrollMagic.Scene
     triggerElement: '#car-screen'
     triggerHook: 'onLeave'
@@ -25,6 +22,9 @@ $ ->
     tweenChanges: true
   .setPin('#car-screen')
   .addTo(controller)
+
+  caption1 = new TimelineMax()
+  .add(TweenMax.to($('.section.main_car_animation .caption'), 1, {'left': '50%'}))
 
   scene = new ScrollMagic.Scene
     triggerElement: "#car-screen"
