@@ -16,6 +16,6 @@
   ],
   "dependencies": {
     "jquery": "*",
-    "slick-carousel": "*"
+    "slick-carousel": "~1.5.9"
   }
 }
