@@ -6,6 +6,7 @@ head
 
   script(src="javascripts/vendor.js")
   script(src="javascripts/app.js")
+  script(src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js")
 
   script.
     require('initialize');
@@ -43,7 +44,7 @@ body
         .first-line оборудование класса
         .second-line premium
         .third-line для автомоек самообслуживания
-      a.arrow(href="#start")
+      .arrow.smoothScroll
         img(src="../pics/section.start.arrow.svg")
 
   .section.business#start
@@ -165,8 +166,8 @@ body
 
 
   .section.slideshow#slideshow
-    .container
-      .block.text
+    .container#show-cont
+      .block.text#show-text
         .title Наши усовершенствованные технологии
 
         .info
