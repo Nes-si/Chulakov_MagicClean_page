@@ -8,14 +8,12 @@
   .container
     height: 100vh
     width: 100%
+    padding-top: 8%
+
     color: white
     text-align: left
-    //border: 2px dashed yellow
 
     .block.main
-      position: absolute
-      left: 0%
-      top: 15%
       width: 600px
 
       font-family: $f_helvetica
@@ -37,9 +35,8 @@
         margin-top: 20px
 
     .block.parts
-      position: absolute
-      left: 5%
-      bottom: 15%
+      margin-left: 5%
+      margin-top: 5%
 
       font-family: $f_helvetica
       font-size: 16px
@@ -59,6 +56,7 @@
 
     .block.cleaner
       position: absolute
-      right: -100%
-      bottom: 0%
+      right: 10%
+      bottom: 50%
+      transform: translateY(50%) translateX(50%)
 
