@@ -17,15 +17,14 @@ $ ->
 
   scene = new ScrollMagic.Scene
     triggerElement: '#trigger2'
-  .setTween('#slideshow_block', 0.5, {backgroundColor: "green", scale: 2.5})
+  #.setTween('#slideshow_block', 0.5, {backgroundColor: "green", scale: 2.5})
   #.setPin('#slideshow_block')
-  #.addTo(controller)
+  .addTo(controller)
 
   scene = new ScrollMagic.Scene
     triggerElement: '#slideshow'
     triggerHook: 'onLeave'
   #.setTween('#slideshow_block', 0.5, {backgroundColor: "green", scale: 2.5})
-  .setPin('#slideshow_all')
-  .setPin('#slideshow')
-  #.addTo(controller)
+  .setPin('#slideshow', {pushFollowers: false})
+  .addTo(controller)
 
