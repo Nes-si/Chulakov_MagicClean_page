@@ -89,6 +89,9 @@ $ ->
 
     $('.block-bottom-1').css("display", "block")
     $('.block-bottom-2').css("display", "none")
+
+    $('.round-1').css("display", "block")
+    $('.round-2').css("display", "none")
   .addTo(controller)
   #.addIndicators()
 
@@ -109,6 +112,10 @@ $ ->
     $('.block-bottom-1').css("display", "none")
     $('.block-bottom-2').css("display", "block")
     $('.block-bottom-3').css("display", "none")
+
+    $('.round-1').css("display", "none")
+    $('.round-2').css("display", "block")
+    $('.round-3').css("display", "none")
   .addTo(controller)
   #.addIndicators()
 
@@ -131,6 +138,9 @@ $ ->
     $('.block-bottom-4').css("display", "none")
 
     $('.block-bottom-left').css("display", "none")
+
+    $('.round-2').css("display", "none")
+    $('.round-3').css("display", "block")
   .addTo(controller)
   #.addIndicators()
 
@@ -150,6 +160,9 @@ $ ->
     $('.block-bottom-4').css("display", "block")
 
     $('.block-bottom-left').css("display", "block")
+
+    $('.round-3').css("display", "none")
+    $('.round-2').css("display", "block")
   .addTo(controller)
   #.addIndicators()
 
