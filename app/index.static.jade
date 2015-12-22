@@ -97,7 +97,7 @@ body
 
       .block-top.block-top-1
         p На этой программе клиент вправе выбрать, каким способом вымыть автомобиль.
-        .button.btn1 Активная пена
+        .button.btn1.button-active Активная пена
         .button.btn2 Активный шампунь
 
       .block-top.block-top-2
@@ -126,8 +126,12 @@ body
 
 
       .block-bottom.block-bottom-1
-        .title MagicActiveFoаm
-        .text Благодаря свое густой формуле, словно взбитые сливки, пена равномерно ложится на всю поверхность автомобиля, превосходно отмывая все загрязнения, в том числе дорожную масляную пленку и следы от насекомых.
+        .block-bottom-var1
+          .title MagicActiveFoаm
+          .text Благодаря своей густой формуле, словно взбитые сливки, пена равномерно ложится на всю поверхность автомобиля, превосходно отмывая все загрязнения, в том числе дорожную масляную пленку и следы от насекомых.
+        .block-bottom-var2
+          .title MagicActiveShampoo
+          .text А это офигенный продающий текст про шампунь.
 
       .block-bottom.block-bottom-2
         .text В холодный период эксплуатации интеллектуальная система InVision автоматически переключает подачу воды на теплую, таким образом предвосхищая ожидание клиента.
@@ -232,13 +236,13 @@ body
   .section.video#after-show
     .container
       .video
-        <iframe width="917" height="516" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        iframe(src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen)
 
 
   .section.request
     .container
       .block.main
-        h1 Оборудование класса Premium
+        h2 Оборудование класса Premium
         p Вы можете оставить заявку на оборудование MagicClean Carwash или связаться с нами другим удобным для вас способом
         .button.btn1 Заказать
         .button.btn2 Посмотреть контакты
