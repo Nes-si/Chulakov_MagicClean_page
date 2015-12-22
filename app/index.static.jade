@@ -44,7 +44,7 @@ body
         .first-line оборудование класса
         .second-line premium
         .third-line для автомоек самообслуживания
-      .arrow.smoothScroll
+      a.arrow.smoothScroll(href="#start")
         img(src="../pics/section.start.arrow.svg")
 
   .section.business#start
@@ -80,28 +80,61 @@ body
           p По-особенному — это означает очень удобно, красиво, быстро и экономно. А если экономно, то это означает то, что люди будут чаще пользоваться такой услугой, ведь автомобили пачкаются всегда.
 
   .section.main_car_animation#car-screen
+    .caption.caption1#car_caption1 Мойка
+    .caption.caption2#car_caption2 Ополаскивание
+    .caption.caption3#car_caption3 Полировка
+    .caption.caption4#car_caption4 Ополаскивание
+      .comment Деминерализованной водой
+
     .container
-      .block-program Первая программа
+      .program.program1 Первая программа
+      .program.program2 Вторая программа
+      .program.program3 Третья программа
+      .program.program4 Четвертая программа
 
-      .block-top
-        .top-1
-          p На этой программе клиент вправе выбрать, каким способом вымыть автомобиль.
-          .button.btn1 Активная пена
-          .button.btn2 Активный шампунь
+      .block-top.block-top-1
+        p На этой программе клиент вправе выбрать, каким способом вымыть автомобиль.
+        .button.btn1 Активная пена
+        .button.btn2 Активный шампунь
+
+      .block-top.block-top-2
+        img(src="../pics/section.main_car_animation.meter.png")
+        p Максимальное давление
+        p 150 бар
+
+      .block-top.block-top-3
+        p Клиент наносит горячий полимерный воск <strong>MagicWax</strong>. В умягченную воду, подогретую до 40° С, при помощи точной системы дозации DigitalBatching дозируется полиморный воск и подается на пистолет под давлением до 150 бар.
+
+      .block-top.block-top-4
+        p Используется вода, очищенная от солей и минералов. Очищение происходит в проццессе обратного осмоса, что позволяет получить воду практически без примесей.
+        p И соответственно такая вода не будет оставлять подтеков и разводов на поверхности автомобиля.
 
 
-      .caption Мойка
+      .content-container
+        .content.cleaner
+        .content.car-shadow
+        .content.car.car-4
+        .content.car.car-3
+        .content.car.car-2
+        .content.car.car-1
 
 
-      .content
-        .cleaner
-
-        .car
-
-
-      .block-bottom
+      .block-bottom.block-bottom-1
         .title MagicActiveFoаm
         .text Благодаря свое густой формуле, словно взбитые сливки, пена равномерно ложится на всю поверхность автомобиля, превосходно отмывая все загрязнения, в том числе дорожную масляную пленку и следы от насекомых.
+
+      .block-bottom.block-bottom-2
+        .text В холодный период эксплуатации интеллектуальная система InVision автоматически переключает подачу воды на теплую, таким образом предвосхищая ожидание клиента.
+
+      .block-bottom.block-bottom-3
+        .text Лакокрасочной поверхности автомобиля придается дополнительный блеск, а капли воды стекают с кузова. Также при следующей мойке автомобиль гораздо легче отмыть от загрязнений.
+
+      .block-bottom.block-bottom-4
+        .text Для получения безупречного эффекта от мойки в целом, система <strong>DigitalBathing</strong> добавляет в деминерализованную воду немного осущающего растрова.
+
+      .block-bottom-left Опционально 4-я программа может использовать горячую деминерализованную воду.
+
+
 
   .section.pause
     .container
@@ -166,8 +199,8 @@ body
 
 
   .section.slideshow#slideshow
-    .container#show-cont
-      .block.text#show-text
+    .container
+      .block.pinned
         .title Наши усовершенствованные технологии
 
         .info
@@ -175,19 +208,22 @@ body
           .text Партисипативное планирование оправдывает пул лояльных изданий.
           a.link Подробнее
 
-      .block.show#slideshow_block
-        .circle-ext
-          .circle-int
-            .slider
-              .pic.pic-1
-              .pic.pic-2
-              .pic.pic-3
-          .prev.btn
-          .next.btn
+      img.pinned(src="../pics/section.slideshow.center.png")
+
+    .block.show
+      .circle-ext
+        .circle-int
+          img.lens(src="../pics/section.slideshow.lens.svg")
+          .slider
+            .pic.pic-1
+            .pic.pic-2
+            .pic.pic-3
+        .prev.btn
+        .next.btn
 
 
 
-  .section.video#trigger2
+  .section.video#after-show
     .container
       .video
         <iframe width="917" height="516" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
