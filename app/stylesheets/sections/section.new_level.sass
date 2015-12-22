@@ -1,4 +1,7 @@
 @import '../_fonts'
+@import '../tools/_mixins'
+@import '../tools/_media_queries'
+
 
 .section.new_level
   position: relative
@@ -32,8 +35,6 @@
     position: absolute
     bottom: 0
     right: 3.5%
-    //+tablet
-      //display: none
-    //+mobile
-      //display: none
+    +tablet
+      display: none
 
