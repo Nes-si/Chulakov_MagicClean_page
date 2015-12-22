@@ -25,32 +25,11 @@ $ ->
   .addTo(controller)
 
 
-  caption1_width = document.getElementById('car_caption1').offsetWidth
-  caption1_width = caption1_width / document.documentElement.clientWidth * 100 + 100
-  caption1_w = caption1_width + '%'
-
-  caption2_width = document.getElementById('car_caption2').offsetWidth
-  caption2_width = caption2_width / document.documentElement.clientWidth * 100 + 100
-  caption2_w = caption2_width + '%'
-
-  caption3_width = document.getElementById('car_caption3').offsetWidth
-  caption3_width = caption3_width / document.documentElement.clientWidth * 100 + 100
-  caption3_w = caption3_width + '%'
-
-  caption4_width = document.getElementById('car_caption4').offsetWidth
-  caption4_width = caption4_width / document.documentElement.clientWidth * 100 + 100
-  caption4_w = caption4_width + '%'
-
-
   caption = new TimelineMax()
-  .to($('.section.main_car_animation .caption1'), 1, {'left': caption1_w, ease: Power0.easeNone})
-  .to($('.section.main_car_animation .caption2'), 1, {'left': caption2_w, ease: Power0.easeNone})
-  .to($('.section.main_car_animation .caption3'), 1, {'left': caption3_w, ease: Power0.easeNone})
-  .to($('.section.main_car_animation .caption4'), 1, {'left': caption4_w, ease: Power0.easeNone})
-  .to($('.section.main_car_animation .caption1'), 0, {'left': '0%', ease: Power0.easeNone})
-  .to($('.section.main_car_animation .caption2'), 0, {'left': '0%', ease: Power0.easeNone})
-  .to($('.section.main_car_animation .caption3'), 0, {'left': '0%', ease: Power0.easeNone})
-  .to($('.section.main_car_animation .caption4'), 0, {'left': '0%', ease: Power0.easeNone})
+  .to($('#car-screen .caption1'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
+  .to($('#car-screen .caption2'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
+  .to($('#car-screen .caption3'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
+  .to($('#car-screen .caption4'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
 
   scene = new ScrollMagic.Scene
     triggerElement: "#car-screen"
@@ -59,6 +38,8 @@ $ ->
   .setTween(caption)
   #.addIndicators()
   .addTo(controller)
+
+
 
 
   back_color = new TimelineMax()
