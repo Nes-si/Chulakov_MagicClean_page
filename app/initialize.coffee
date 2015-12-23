@@ -203,7 +203,7 @@ $ ->
     $('.section.main_car_animation .round-3').removeClass("car-active")
     $('.section.main_car_animation .round-2').addClass("car-active")
   .addTo(controller)
-  .addIndicators()
+  #.addIndicators()
 
 
 
