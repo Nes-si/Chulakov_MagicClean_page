@@ -109,8 +109,6 @@
         margin-bottom: 20px
 
 
-
-
     .content-container
       position: absolute
       top: 60%
@@ -184,70 +182,74 @@
         background-image: url("../pics/section.main_car_animation.car4.png")
 
 
-    .block-bottom
+    .block-bottom-cont
       position: absolute
       bottom: 5vh
-      left: 50%
-      width: 45%
-      font-family: $f_helvetica
-      padding-top: 70px
+      left: 0
+      padding-left: 30px
+      padding-right: 30px
+      font-size: 0
+      text-align: left
 
-      background-repeat: no-repeat
-      background-position: 2px 0
+      .block-bottom-left
+        display: inline-block
+        vertical-align: top
+        width: 50%
 
-      display: none
+        opacity: 0
 
-      .title
-        font-weight: 600
-        font-size: 16px
-        line-height: 22px
-        opacity: 0.7
-        margin-bottom: 10px
+        .text
+          font-family: $f_helvetica
+          font-weight: 300
+          font-size: 16px
+          line-height: 26px
+          opacity: 0.7
 
-      .text
-        font-weight: 300
-        font-size: 16px
-        line-height: 26px
-        opacity: 0.7
+      .block-bottom
+        display: inline-block
+        vertical-align: top
+        width: 50%
+        font-family: $f_helvetica
+        position: relative
 
-
-    .block-bottom-1
-      background-image: url("../pics/section.main_car_animation.bottom.1.svg")
-      display: block
-
-      .block-bottom-var1
-        display: block
-
-      .block-bottom-var2
         display: none
 
-      .text
-        opacity: 0.4
-        font-size: 14px
-        line-height: 21px
+        img
+          position: absolute
+          left: 0
+          top: -70px
 
-    .block-bottom-2
-      background-image: url("../pics/section.main_car_animation.temp.png")
+        .title
+          font-weight: 600
+          font-size: 16px
+          line-height: 22px
+          opacity: 0.7
+          margin-bottom: 10px
 
-    .block-bottom-3
-      background-image: url("../pics/section.main_car_animation.sparks.png")
+        .text
+          font-weight: 300
+          font-size: 16px
+          line-height: 26px
+          opacity: 0.7
 
-    .block-bottom-4
-      background-image: url("../pics/section.main_car_animation.fan.png")
+
+      .block-bottom-1
+        display: inline-block
+
+        .block-bottom-var1
+          display: block
+
+        .block-bottom-var2
+          display: none
+
+        .text
+          opacity: 0.4
+          font-size: 14px
+          line-height: 21px
 
 
-    .block-bottom-left
-      width: 550px
-      font-family: $f_helvetica
-      margin-top: 79vh
-      vertical-align: bottom
 
-      display: none
 
-      font-weight: 300
-      font-size: 16px
-      line-height: 26px
-      opacity: 0.7
 
 
 .button-active

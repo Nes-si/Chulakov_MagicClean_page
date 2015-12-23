@@ -121,7 +121,7 @@ $ ->
     $('.block-top-1').css("display", "block")
     $('.block-top-2').css("display", "none")
 
-    $('.block-bottom-1').css("display", "block")
+    $('.block-bottom-1').css("display", "inline-block")
     $('.block-bottom-2').css("display", "none")
 
     $('.round-1').css("display", "block")
@@ -144,7 +144,7 @@ $ ->
     $('.block-top-3').css("display", "none")
 
     $('.block-bottom-1').css("display", "none")
-    $('.block-bottom-2').css("display", "block")
+    $('.block-bottom-2').css("display", "inline-block")
     $('.block-bottom-3').css("display", "none")
 
     $('.round-1').css("display", "none")
@@ -168,10 +168,10 @@ $ ->
     $('.block-top-4').css("display", "none")
 
     $('.block-bottom-2').css("display", "none")
-    $('.block-bottom-3').css("display", "block")
+    $('.block-bottom-3').css("display", "inline-block")
     $('.block-bottom-4').css("display", "none")
 
-    $('.block-bottom-left').css("display", "none")
+    $('.block-bottom-left').css("opacity", "0")
 
     $('.round-2').css("display", "none")
     $('.round-3').css("display", "block")
@@ -191,9 +191,9 @@ $ ->
     $('.block-top-4').css("display", "block")
 
     $('.block-bottom-3').css("display", "none")
-    $('.block-bottom-4').css("display", "block")
+    $('.block-bottom-4').css("display", "inline-block")
 
-    $('.block-bottom-left').css("display", "block")
+    $('.block-bottom-left').css("opacity", "1")
 
     $('.round-3').css("display", "none")
     $('.round-2').css("display", "block")
