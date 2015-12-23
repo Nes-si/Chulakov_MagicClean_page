@@ -54,17 +54,22 @@ $ ->
   $('.next.btn').click ->
     $('.slider').slick('slickNext')
 
+  car_btn_active = 1
 
   $('.section.main_car_animation .btn1').click ->
     $('.section.main_car_animation .btn1').addClass('button-active')
     $('.section.main_car_animation .btn2').removeClass('button-active')
-    $('.section.main_car_animation .block-bottom-var1').css('display' : 'block')
-    $('.section.main_car_animation .block-bottom-var2').css('display' : 'none')
+    $('.section.main_car_animation .bottom-right-1-1').addClass('car-active')
+    $('.section.main_car_animation .bottom-right-1-2').removeClass('car-active')
+    car_btn_active = 1
+
   $('.section.main_car_animation .btn2').click ->
     $('.section.main_car_animation .btn1').removeClass('button-active')
     $('.section.main_car_animation .btn2').addClass('button-active')
-    $('.section.main_car_animation .block-bottom-var1').css('display' : 'none')
-    $('.section.main_car_animation .block-bottom-var2').css('display' : 'block')
+    $('.section.main_car_animation .bottom-right-1-1').removeClass('car-active')
+    $('.section.main_car_animation .bottom-right-1-2').addClass('car-active')
+    car_btn_active = 2
+
 
 
 #==========SCROLL MAGIC=====================================
@@ -81,10 +86,10 @@ $ ->
 
 
   caption = new TimelineMax()
-  .to($('#car-screen .caption1'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
-  .to($('#car-screen .caption2'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
-  .to($('#car-screen .caption3'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
-  .to($('#car-screen .caption4'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
+  .to($('.section.main_car_animation .caption1'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
+  .to($('.section.main_car_animation .caption2'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
+  .to($('.section.main_car_animation .caption3'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
+  .to($('.section.main_car_animation .caption4'), 1, {'left': '100%', 'transform': 'translateX(100%)', ease: Power0.easeNone})
 
   scene_car_caption_move = new ScrollMagic.Scene
     triggerElement: "#car-screen"
@@ -115,88 +120,88 @@ $ ->
     duration: '100%'
     triggerHook: 0
   .on "start end", ->
-    $('.program1').css("display", "block")
-    $('.program2').css("display", "none")
+    $('.section.main_car_animation .program1').addClass("car-active")
+    $('.section.main_car_animation .program2').removeClass("car-active")
 
-    $('.block-top-1').css("display", "block")
-    $('.block-top-2').css("display", "none")
+    $('.section.main_car_animation .info-1').addClass("car-active")
+    $('.section.main_car_animation .info-2').removeClass("car-active")
 
-    $('.block-bottom-1').css("display", "inline-block")
-    $('.block-bottom-2').css("display", "none")
+    $('.section.main_car_animation .bottom-right-1-' + car_btn_active).addClass("car-active")
+    $('.section.main_car_animation .bottom-right-2').removeClass("car-active")
 
-    $('.round-1').css("display", "block")
-    $('.round-2').css("display", "none")
+    $('.section.main_car_animation .round-1').addClass("car-active")
+    $('.section.main_car_animation .round-2').removeClass("car-active")
   .addTo(controller)
   #.addIndicators()
 
   scene_car_2_to_3 = new ScrollMagic.Scene
     triggerElement: "#car-screen"
     duration: '100%'
-    offset: document.documentElement.clientHeight
+    offset: window.screen_h
     triggerHook: 0
   .on "start end", ->
-    $('.program1').css("display", "none")
-    $('.program2').css("display", "block")
-    $('.program3').css("display", "none")
+    $('.section.main_car_animation .program1').removeClass("car-active")
+    $('.section.main_car_animation .program2').addClass("car-active")
+    $('.section.main_car_animation .program3').removeClass("car-active")
 
-    $('.block-top-1').css("display", "none")
-    $('.block-top-2').css("display", "block")
-    $('.block-top-3').css("display", "none")
+    $('.section.main_car_animation .info-1').removeClass("car-active")
+    $('.section.main_car_animation .info-2').addClass("car-active")
+    $('.section.main_car_animation .info-3').removeClass("car-active")
 
-    $('.block-bottom-1').css("display", "none")
-    $('.block-bottom-2').css("display", "inline-block")
-    $('.block-bottom-3').css("display", "none")
+    $('.section.main_car_animation .bottom-right-1-' + car_btn_active).removeClass("car-active")
+    $('.section.main_car_animation .bottom-right-2').addClass("car-active")
+    $('.section.main_car_animation .bottom-right-3').removeClass("car-active")
 
-    $('.round-1').css("display", "none")
-    $('.round-2').css("display", "block")
-    $('.round-3').css("display", "none")
+    $('.section.main_car_animation .round-1').removeClass("car-active")
+    $('.section.main_car_animation .round-2').addClass("car-active")
+    $('.section.main_car_animation .round-3').removeClass("car-active")
   .addTo(controller)
   #.addIndicators()
 
   scene_car_3_to_4 = new ScrollMagic.Scene
     triggerElement: "#car-screen"
     duration: '100%'
-    offset: document.documentElement.clientHeight * 2
+    offset: window.screen_h * 2
     triggerHook: 0
   .on "start end", ->
-    $('.program2').css("display", "none")
-    $('.program3').css("display", "block")
-    $('.program4').css("display", "none")
+    $('.section.main_car_animation .program2').removeClass("car-active")
+    $('.section.main_car_animation .program3').addClass("car-active")
+    $('.section.main_car_animation .program4').removeClass("car-active")
 
-    $('.block-top-2').css("display", "none")
-    $('.block-top-3').css("display", "block")
-    $('.block-top-4').css("display", "none")
+    $('.section.main_car_animation .info-2').removeClass("car-active")
+    $('.section.main_car_animation .info-3').addClass("car-active")
+    $('.section.main_car_animation .info-4').removeClass("car-active")
 
-    $('.block-bottom-2').css("display", "none")
-    $('.block-bottom-3').css("display", "inline-block")
-    $('.block-bottom-4').css("display", "none")
+    $('.section.main_car_animation .bottom-right-2').removeClass("car-active")
+    $('.section.main_car_animation .bottom-right-3').addClass("car-active")
+    $('.section.main_car_animation .bottom-right-4').removeClass("car-active")
 
-    $('.block-bottom-left').css("opacity", "0")
+    $('.section.main_car_animation .bottom-left').removeClass("car-active")
 
-    $('.round-2').css("display", "none")
-    $('.round-3').css("display", "block")
+    $('.section.main_car_animation .round-2').removeClass("car-active")
+    $('.section.main_car_animation .round-3').addClass("car-active")
   .addTo(controller)
   #.addIndicators()
 
   scene_car_4_to_null = new ScrollMagic.Scene
     triggerElement: "#car-screen"
     duration: '100%'
-    offset: document.documentElement.clientHeight * 3
+    offset: window.screen_h * 3
     triggerHook: 0
   .on "start end", ->
-    $('.program3').css("display", "none")
-    $('.program4').css("display", "block")
+    $('.section.main_car_animation .program3').removeClass("car-active")
+    $('.section.main_car_animation .program4').addClass("car-active")
 
-    $('.block-top-3').css("display", "none")
-    $('.block-top-4').css("display", "block")
+    $('.section.main_car_animation .info-3').removeClass("car-active")
+    $('.section.main_car_animation .info-4').addClass("car-active")
 
-    $('.block-bottom-3').css("display", "none")
-    $('.block-bottom-4').css("display", "inline-block")
+    $('.section.main_car_animation .bottom-right-3').removeClass("car-active")
+    $('.section.main_car_animation .bottom-right-4').addClass("car-active")
 
-    $('.block-bottom-left').css("opacity", "1")
+    $('.section.main_car_animation .bottom-left').addClass("car-active")
 
-    $('.round-3').css("display", "none")
-    $('.round-2').css("display", "block")
+    $('.section.main_car_animation .round-3').removeClass("car-active")
+    $('.section.main_car_animation .round-2').addClass("car-active")
   .addTo(controller)
   .addIndicators()
 
@@ -208,7 +213,7 @@ $ ->
   scene_car_1_hide = new ScrollMagic.Scene
     triggerElement: "#car-screen"
     duration: '20%'
-    offset: document.documentElement.clientHeight * 0.8
+    offset: window.screen_h * 0.8
     triggerHook: 0
   .setTween(car_anim)
   .addTo(controller)
@@ -219,7 +224,7 @@ $ ->
   scene_car_2_show = new ScrollMagic.Scene
     triggerElement: "#car-screen"
     duration: '20%'
-    offset: document.documentElement.clientHeight * 0.8
+    offset: window.screen_h * 0.8
     triggerHook: 0
   .setTween(car_anim)
   .addTo(controller)
@@ -231,7 +236,7 @@ $ ->
   scene_car_2_hide = new ScrollMagic.Scene
     triggerElement: "#car-screen"
     duration: '20%'
-    offset: document.documentElement.clientHeight * 1.8
+    offset: window.screen_h * 1.8
     triggerHook: 0
   .setTween(car_anim)
   .addTo(controller)
@@ -242,7 +247,7 @@ $ ->
   scene_car_3_show = new ScrollMagic.Scene
     triggerElement: "#car-screen"
     duration: '20%'
-    offset: document.documentElement.clientHeight * 1.8
+    offset: window.screen_h * 1.8
     triggerHook: 0
   .setTween(car_anim)
   .addTo(controller)
@@ -254,45 +259,60 @@ $ ->
   scene_car_3_hide = new ScrollMagic.Scene
     triggerElement: "#car-screen"
     duration: '20%'
-    offset: document.documentElement.clientHeight * 2.8
+    offset: window.screen_h * 2.8
     triggerHook: 0
   .setTween(car_anim)
   .addTo(controller)
 
 
 
+
   scene_slides_pin = new ScrollMagic.Scene
     triggerElement: '#slideshow'
     triggerHook: 'onLeave'
-    duration: document.documentElement.clientHeight / 2
-  .setPin('#slideshow .block.pinned')
+    duration: window.screen_h / 2
+  .setPin('.section.slideshow .block.pinned')
   .addTo(controller)
 
   scene_slides_lens_show = new ScrollMagic.Scene
     triggerElement: '#slideshow'
     triggerHook: 'onLeave'
-    duration: document.documentElement.clientHeight / 2
+    duration: window.screen_h / 2
   .setPin('#slideshow img.pinned')
   .on "end", ->
-    $('#slideshow .lens').css('display', 'block')
+    $('.section.slideshow .lens').css('display', 'block')
   .addTo(controller)
 
   scene_slides_lens_hide = new ScrollMagic.Scene
     triggerElement: '#after-show'
     triggerHook: 1
-    duration: document.documentElement.clientHeight / 2
+    duration: window.screen_h / 2
   .on "start", ->
-    $('#slideshow .lens').css('display', 'none')
+    $('.section.slideshow .lens').css('display', 'none')
   .addTo(controller)
 
+  lens_opacity = new TimelineMax()
+  .to($('.section.slideshow .lens'), 1, {opacity: 0, ease: Power0.easeNone})
 
-  $('.block-top-1 .btn1').click ->
-    $('.block-top-1 .btn1').addClass('.button-active')
-    $('.block-top-1 .btn2').removeClass('.button-active')
+  scene_slides_lens_show = new ScrollMagic.Scene
+    triggerElement: '#slideshow'
+    triggerHook: 'onLeave'
+    duration: window.screen_h / 4
+    offset: window.screen_h / 4
+  .setTween(lens_opacity)
+  .addTo(controller)
 
-  $('.block-top-1 .btn2').click ->
-    $('.block-top-1 .btn1').removeClass('.button-active')
-    $('.block-top-1 .btn2').addClass('.button-active')
+  slider_opacity = new TimelineMax()
+  .to($('.section.slideshow .slider .pic'), 1, {opacity: 1, ease: Power0.easeNone})
+
+  scene_slides_lens_show = new ScrollMagic.Scene
+    triggerElement: '#slideshow'
+    triggerHook: 'onLeave'
+    duration: window.screen_h / 4
+    offset: window.screen_h / 4
+  .setTween(slider_opacity)
+  .addTo(controller)
+
 
 
 $(window).resize ->

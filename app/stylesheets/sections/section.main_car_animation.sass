@@ -1,4 +1,7 @@
 @import '../_fonts'
+@import '../tools/_media_queries'
+@import '../tools/_mixins'
+
 
 .section.main_car_animation
   position: relative
@@ -36,77 +39,80 @@
     padding-top: 6vh
 
     text-align: left
+    font-size: 0
 
-
-    .program
-      float: left
-      width: 300px
+    .program-cont
+      display: inline-block
+      width: 50%
       vertical-align: top
-
       opacity: 0.7
-      font-family: $f_helvetica
-      font-weight: 300
-      font-size: 35.1px
-      line-height: 50.71px
-      text-transform: uppercase
 
-      display: none
+      .program
+        position: absolute
+        width: 300px
 
-    .program1
-      display: block
+        font-family: $f_helvetica
+        font-weight: 300
+        font-size: 35.1px
+        line-height: 50.71px
+        text-transform: uppercase
+
+        opacity: 0
+        transition-duration: 1s
 
 
-    .block-top
-      position: absolute
-      left: 50%
+
+    .info-cont
+      display: inline-block
       width: 45%
-
-      font-family: $f_helvetica
-      font-weight: 300
-      font-size: 16px
-      line-height: 26px
-
-      color: black
       opacity: 0.7
 
-      display: none
+      .info
+        position: absolute
+        font-family: $f_helvetica
+        font-weight: 300
+        font-size: 16px
+        line-height: 26px
+        color: black
+        width: 45%
 
-    .block-top-1
-      width: 400px
-      display: block
+        opacity: 0
+        transition-duration: 1s
 
-      .button
-        display: inline-block
-        margin-right: 10px
-        padding: 15px 30px
+      .info-1
+        width: 400px
 
-        border: 2px solid #3aa8b3
-        border-radius: 100px
+        .button
+          display: inline-block
+          margin-right: 10px
+          padding: 15px 30px
 
-        cursor: pointer
-        opacity: 1
+          border: 2px solid #3aa8b3
+          border-radius: 100px
 
-      .button:last-child
-        margin-right: 0
+          cursor: pointer
 
-      .button:hover
-        color: white
-        background-color: #3aa8b3
+        .button:last-child
+          margin-right: 0
 
-    .block-top-2
-      img
-        opacity: 1
-        margin-bottom: 10px
+        .button:hover
+          color: white
+          background-color: #3aa8b3
 
-      p
-        margin: 0
+      .info-2
+        img
+          opacity: 1
+          margin-bottom: 10px
 
-      p:last-of-type
-        font-weight: 600
+        p
+          margin: 0
 
-    .block-top-4
-      p:first-child
-        margin-bottom: 20px
+        p:last-of-type
+          font-weight: 600
+
+      .info-4
+        p:first-child
+          margin-bottom: 20px
 
 
     .content-container
@@ -139,13 +145,12 @@
         border: 3px solid #ff1300
         border-radius: 100px
 
-        display: none
+        opacity: 0
+        transition-duration: 1s
 
       .round-1
         right: 145px
         bottom: 250px
-
-        display: block
 
       .round-2
         right: 145px
@@ -182,21 +187,26 @@
         background-image: url("../pics/section.main_car_animation.car4.png")
 
 
-    .block-bottom-cont
+    .info-bottom-cont
       position: absolute
-      bottom: 5vh
+      width: 100%
       left: 0
-      padding-left: 30px
-      padding-right: 30px
+      padding: 0 30px
+      +tablet
+        padding: 0 20px
+
+      height: 10vh
+      bottom: 7vh
       font-size: 0
       text-align: left
 
-      .block-bottom-left
+      .bottom-left
         display: inline-block
         vertical-align: top
         width: 50%
 
         opacity: 0
+        transition-duration: 1s
 
         .text
           font-family: $f_helvetica
@@ -205,53 +215,52 @@
           line-height: 26px
           opacity: 0.7
 
-      .block-bottom
+      .bottom-right-cont
         display: inline-block
         vertical-align: top
         width: 50%
-        font-family: $f_helvetica
         position: relative
 
-        display: none
-
-        img
+        .bottom-right
           position: absolute
-          left: 0
-          top: -70px
+          font-family: $f_helvetica
 
-        .title
-          font-weight: 600
-          font-size: 16px
-          line-height: 22px
-          opacity: 0.7
-          margin-bottom: 10px
+          opacity: 0
+          transition-duration: 1s
 
-        .text
-          font-weight: 300
-          font-size: 16px
-          line-height: 26px
-          opacity: 0.7
+          img
+            position: absolute
+            left: 0
+            top: -70px
+
+          .title
+            font-weight: 600
+            font-size: 16px
+            line-height: 22px
+            opacity: 0.7
+            margin-bottom: 10px
+
+          .text
+            font-weight: 300
+            font-size: 16px
+            line-height: 26px
+            opacity: 0.7
 
 
-      .block-bottom-1
-        display: inline-block
-
-        .block-bottom-var1
-          display: block
-
-        .block-bottom-var2
-          display: none
-
-        .text
-          opacity: 0.4
-          font-size: 14px
-          line-height: 21px
-
+        .bottom-right-1-1, .bottom-right-1-2
+          .text
+            opacity: 0.4
+            font-size: 14px
+            line-height: 21px
 
 
 
 
+.car-active
+  opacity: 1 !important
 
 .button-active
   color: white !important
   background-color: #3aa8b3 !important
+
+

@@ -83,39 +83,41 @@ body
             p По-особенному — это означает очень удобно, красиво, быстро и экономно. А если экономно, то это означает то, что люди будут чаще пользоваться такой услугой, ведь автомобили пачкаются всегда.
 
   .section.main_car_animation#car-screen
-    .caption.caption1#car_caption1 Мойка
-    .caption.caption2#car_caption2 Ополаскивание
-    .caption.caption3#car_caption3 Полировка
-    .caption.caption4#car_caption4 Ополаскивание
+    .caption.caption1 Мойка
+    .caption.caption2 Ополаскивание
+    .caption.caption3 Полировка
+    .caption.caption4 Ополаскивание
       .comment Деминерализованной водой
 
     .container
-      .program.program1 Первая программа
-      .program.program2 Вторая программа
-      .program.program3 Третья программа
-      .program.program4 Четвертая программа
+      .program-cont
+        .program.program1.car-active Первая программа
+        .program.program2 Вторая программа
+        .program.program3 Третья программа
+        .program.program4 Четвертая программа
 
-      .block-top.block-top-1
-        p На этой программе клиент вправе выбрать, каким способом вымыть автомобиль.
-        .button.btn1.button-active Активная пена
-        .button.btn2 Активный шампунь
+      .info-cont
+        .info.info-2
+          img(src="../pics/section.main_car_animation.meter.png")
+          p Максимальное давление
+          p 150 бар
 
-      .block-top.block-top-2
-        img(src="../pics/section.main_car_animation.meter.png")
-        p Максимальное давление
-        p 150 бар
+        .info.info-3
+          p Клиент наносит горячий полимерный воск <strong>MagicWax</strong>. В умягченную воду, подогретую до 40° С, при помощи точной системы дозации DigitalBatching дозируется полиморный воск и подается на пистолет под давлением до 150 бар.
 
-      .block-top.block-top-3
-        p Клиент наносит горячий полимерный воск <strong>MagicWax</strong>. В умягченную воду, подогретую до 40° С, при помощи точной системы дозации DigitalBatching дозируется полиморный воск и подается на пистолет под давлением до 150 бар.
+        .info.info-4
+          p Используется вода, очищенная от солей и минералов. Очищение происходит в процессе обратного осмоса, что позволяет получить воду практически без примесей.
+          p И соответственно, такая вода не будет оставлять подтеков и разводов на поверхности автомобиля.
 
-      .block-top.block-top-4
-        p Используется вода, очищенная от солей и минералов. Очищение происходит в проццессе обратного осмоса, что позволяет получить воду практически без примесей.
-        p И соответственно такая вода не будет оставлять подтеков и разводов на поверхности автомобиля.
+        .info.info-1.car-active
+          p На этой программе клиент вправе выбрать, каким способом вымыть автомобиль.
+          .button.btn1.button-active Активная пена
+          .button.btn2 Активный шампунь
 
 
       .content-container
         .content.cleaner
-        .content.round.round-1
+        .content.round.round-1.car-active
         .content.round.round-2
         .content.round.round-3
         .content.car-shadow
@@ -124,36 +126,39 @@ body
         .content.car.car-2
         .content.car.car-1
 
-      .block-bottom-cont
-        .block-bottom-left
+      .info-bottom-cont
+        .bottom-left
           .text Опционально 4-я программа может использовать горячую деминерализованную воду.
 
-        .block-bottom.block-bottom-1
-          img(src="../pics/section.main_car_animation.bottom.1.svg" height="70")
-          .block-bottom-var1
+        .bottom-right-cont
+
+          .bottom-right.bottom-right-1-1.car-active
+            img(src="../pics/section.main_car_animation.bottom.1.svg" height="70")
             .title MagicActiveFoаm
             .text Благодаря своей густой формуле, словно взбитые сливки, пена равномерно ложится на всю поверхность автомобиля, превосходно отмывая все загрязнения, в том числе дорожную масляную пленку и следы от насекомых.
-          .block-bottom-var2
+
+          .bottom-right.bottom-right-1-2
+            img(src="../pics/section.main_car_animation.bottom.1.svg" height="70")
             .title MagicActiveShampoo
             .text А это офигенный продающий текст про шампунь.
 
-        .block-bottom.block-bottom-2
-          img(src="../pics/section.main_car_animation.temp.png")
-          .text В холодный период эксплуатации интеллектуальная система InVision автоматически переключает подачу воды на теплую, таким образом предвосхищая ожидание клиента.
+          .bottom-right.bottom-right-2
+            img(src="../pics/section.main_car_animation.temp.png")
+            .text В холодный период эксплуатации интеллектуальная система InVision автоматически переключает подачу воды на теплую, таким образом предвосхищая ожидание клиента.
 
-        .block-bottom.block-bottom-3
-          img(src="../pics/section.main_car_animation.sparks.png")
-          .text Лакокрасочной поверхности автомобиля придается дополнительный блеск, а капли воды стекают с кузова. Также при следующей мойке автомобиль гораздо легче отмыть от загрязнений.
+          .bottom-right.bottom-right-3
+            img(src="../pics/section.main_car_animation.sparks.png")
+            .text Лакокрасочной поверхности автомобиля придается дополнительный блеск, а капли воды стекают с кузова. Также при следующей мойке автомобиль гораздо легче отмыть от загрязнений.
 
-        .block-bottom.block-bottom-4
-          img(src="../pics/section.main_car_animation.fan.png")
-          .text Для получения безупречного эффекта от мойки в целом, система <strong>DigitalBathing</strong> добавляет в деминерализованную воду немного осущающего раствора.
-
-
+          .bottom-right.bottom-right-4
+            img(src="../pics/section.main_car_animation.fan.png")
+            .text Для получения безупречного эффекта от мойки в целом, система <strong>DigitalBathing</strong> добавляет в деминерализованную воду немного осущающего раствора.
 
 
 
-  .section.pause#car-after
+
+
+  .section.pause
     .container
       .center-cont
         .block.left
