@@ -42,6 +42,7 @@
     font-size: 0
 
     .program-cont
+      position: relative
       display: inline-block
       width: 50%
       vertical-align: top
@@ -64,6 +65,7 @@
 
 
     .info-cont
+      position: relative
       display: inline-block
       width: 45%
       opacity: 0.7
@@ -75,7 +77,6 @@
         font-size: 16px
         line-height: 26px
         color: black
-        width: 45%
 
         opacity: 0
         transition-delay: 0ms
@@ -139,7 +140,6 @@
         background-image: url("../pics/section.main_car_animation.cleaner.png")
 
       .round
-        position: absolute
         height: 10px
         width: 10px
 
@@ -163,6 +163,10 @@
         right: 145px
         bottom: 230px
 
+      .round-4
+        right: 145px
+        bottom: 220px
+
 
       .car-shadow
         bottom: 0
@@ -176,17 +180,18 @@
         bottom: 17px
         width: 630px
         height: 193px
+
         opacity: 0
+        transition-delay: 0ms
+        transition-duration: 500ms
 
       .car-1
-        opacity: 1
         background-image: url("../pics/section.main_car_animation.car1.png")
       .car-2
         background-image: url("../pics/section.main_car_animation.car2.png")
       .car-3
         background-image: url("../pics/section.main_car_animation.car3.png")
       .car-4
-        opacity: 1
         background-image: url("../pics/section.main_car_animation.car4.png")
 
 
@@ -199,25 +204,29 @@
         padding: 0 20px
 
       height: 10vh
-      bottom: 7vh
+      bottom: 3vh
       font-size: 0
       text-align: left
 
-      .bottom-left
+      .bottom-left-cont
         display: inline-block
+        position: relative
         vertical-align: top
         width: 50%
 
-        opacity: 0
-        transition-delay: 0ms
-        transition-duration: 500ms
+        .bottom-left
+          position: absolute
 
-        .text
-          font-family: $f_helvetica
-          font-weight: 300
-          font-size: 16px
-          line-height: 26px
-          opacity: 0.7
+          opacity: 0
+          transition-delay: 0ms
+          transition-duration: 500ms
+
+          .text
+            font-family: $f_helvetica
+            font-weight: 300
+            font-size: 16px
+            line-height: 26px
+            opacity: 0.7
 
       .bottom-right-cont
         display: inline-block

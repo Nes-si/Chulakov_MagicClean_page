@@ -62,29 +62,63 @@ scrollMagicInit = ->
   .addTo(window.controller)
 
 
+
+  process2Obj = (obj_1, obj_2) ->
+    if $(obj_1).hasClass("car-active")
+      new TweenMax.to($(obj_1), 1, {'top': '-100px', onComplete: ->
+        $(obj_1).css('top', '0')
+      })
+
+    $(obj_1).removeClass("car-active")
+    $(obj_2).addClass("car-active")
+
+    console.log('2')
+
+
+  process3Obj = (obj_1, obj_2, obj_3) ->
+    if $(obj_1).hasClass("car-active")
+      new TweenMax.to($(obj_1), 1, {'top': '-100px', onComplete: ->
+        $(obj_1).css('top', '0')
+      })
+    if $(obj_3).hasClass("car-active")
+      new TweenMax.to($(obj_3), 1, {'top': '-100px', onComplete: ->
+        $(obj_3).css('top', '0')
+      })
+
+    $(obj_1).removeClass("car-active")
+    $(obj_2).addClass("car-active")
+    $(obj_3).removeClass("car-active")
+
+    console.log('3')
+
+
+
+
   window.scene_car_1_to_2 = new ScrollMagic.Scene
     triggerElement: "#car-screen"
     duration: '100%'
     triggerHook: 0
   .on "start end", ->
-    $('.section.main_car_animation .program1').addClass("car-active")
-    $('.section.main_car_animation .program2').removeClass("car-active")
+    ob_1 = '.section.main_car_animation .program1'
+    ob_2 = '.section.main_car_animation .program2'
+    process2Obj ob_2, ob_1
 
+    ob_1 = '.section.main_car_animation .info-1'
+    ob_2 = '.section.main_car_animation .info-2'
+    process2Obj ob_2, ob_1
 
+    ob_1 = '.section.main_car_animation .bottom-right-1-' + window.car_btn_active
+    ob_2 = '.section.main_car_animation .bottom-right-2'
+    process2Obj ob_2, ob_1
 
-    $('.section.main_car_animation .info-1').addClass("car-active")
-    $('.section.main_car_animation .info-2').removeClass("car-active")
-
-    $('.section.main_car_animation .bottom-right-1-' + window.car_btn_active).addClass("car-active")
-    $('.section.main_car_animation .bottom-right-2').removeClass("car-active")
+    $('.section.main_car_animation .car-1').addClass("car-active")
+    $('.section.main_car_animation .car-2').removeClass("car-active")
 
     $('.section.main_car_animation .round-1').addClass("car-active")
     $('.section.main_car_animation .round-2').removeClass("car-active")
   .addTo(window.controller)
   .addIndicators()
 
-  tw_complete = ->
-    $('.section.main_car_animation .program1').css('top', '0')
 
   window.scene_car_2_to_3 = new ScrollMagic.Scene
     triggerElement: "#car-screen"
@@ -92,24 +126,24 @@ scrollMagicInit = ->
     offset: window.screen_h
     triggerHook: 0
   .on "start end", ->
-    if $('.section.main_car_animation .program1').hasClass("car-active")
-      new TweenMax.to($('.section.main_car_animation .program1'), 1, {'top': '-100px', onComplete: ->
-        $('.section.main_car_animation .program1').css('top', '0')
-      })
+    ob_1 = '.section.main_car_animation .program1'
+    ob_2 = '.section.main_car_animation .program2'
+    ob_3 = '.section.main_car_animation .program3'
+    process3Obj ob_1, ob_2, ob_3
 
+    ob_1 = '.section.main_car_animation .info-1'
+    ob_2 = '.section.main_car_animation .info-2'
+    ob_3 = '.section.main_car_animation .info-3'
+    process3Obj ob_1, ob_2, ob_3
 
-    $('.section.main_car_animation .program1').removeClass("car-active")
-    $('.section.main_car_animation .program2').addClass("car-active")
-    $('.section.main_car_animation .program3').removeClass("car-active")
+    ob_1 = '.section.main_car_animation .bottom-right-1-' + window.car_btn_active
+    ob_2 = '.section.main_car_animation .bottom-right-2'
+    ob_3 = '.section.main_car_animation .bottom-right-3'
+    process3Obj ob_1, ob_2, ob_3
 
-
-    $('.section.main_car_animation .info-1').removeClass("car-active")
-    $('.section.main_car_animation .info-2').addClass("car-active")
-    $('.section.main_car_animation .info-3').removeClass("car-active")
-
-    $('.section.main_car_animation .bottom-right-1-' + car_btn_active).removeClass("car-active")
-    $('.section.main_car_animation .bottom-right-2').addClass("car-active")
-    $('.section.main_car_animation .bottom-right-3').removeClass("car-active")
+    $('.section.main_car_animation .car-1').removeClass("car-active")
+    $('.section.main_car_animation .car-2').addClass("car-active")
+    $('.section.main_car_animation .car-3').removeClass("car-active")
 
     $('.section.main_car_animation .round-1').removeClass("car-active")
     $('.section.main_car_animation .round-2').addClass("car-active")
@@ -123,19 +157,30 @@ scrollMagicInit = ->
     offset: window.screen_h * 2
     triggerHook: 0
   .on "start end", ->
-    $('.section.main_car_animation .program2').removeClass("car-active")
-    $('.section.main_car_animation .program3').addClass("car-active")
-    $('.section.main_car_animation .program4').removeClass("car-active")
+    ob_2 = '.section.main_car_animation .program2'
+    ob_3 = '.section.main_car_animation .program3'
+    ob_4 = '.section.main_car_animation .program4'
+    process3Obj ob_2, ob_3, ob_4
 
-    $('.section.main_car_animation .info-2').removeClass("car-active")
-    $('.section.main_car_animation .info-3').addClass("car-active")
-    $('.section.main_car_animation .info-4').removeClass("car-active")
+    ob_2 = '.section.main_car_animation .info-2'
+    ob_3 = '.section.main_car_animation .info-3'
+    ob_4 = '.section.main_car_animation .info-4'
+    process3Obj ob_2, ob_3, ob_4
 
-    $('.section.main_car_animation .bottom-right-2').removeClass("car-active")
-    $('.section.main_car_animation .bottom-right-3').addClass("car-active")
-    $('.section.main_car_animation .bottom-right-4').removeClass("car-active")
+    ob_2 = '.section.main_car_animation .bottom-right-2'
+    ob_3 = '.section.main_car_animation .bottom-right-3'
+    ob_4 = '.section.main_car_animation .bottom-right-4'
+    process3Obj ob_2, ob_3, ob_4
 
-    $('.section.main_car_animation .bottom-left').removeClass("car-active")
+    ob_1 = '.section.main_car_animation .bottom-left'
+    if $(ob_1).hasClass("car-active")
+      new TweenMax.to($(ob_1), 1, {'top': '-100px', onComplete: ->
+        $(ob_1).css('top', '0')
+      })
+    $(ob_1).removeClass("car-active")
+
+    $('.section.main_car_animation .car-2').removeClass("car-active")
+    $('.section.main_car_animation .car-3').addClass("car-active")
 
     $('.section.main_car_animation .round-2').removeClass("car-active")
     $('.section.main_car_animation .round-3').addClass("car-active")
@@ -149,79 +194,27 @@ scrollMagicInit = ->
     offset: window.screen_h * 3
     triggerHook: 0
   .on "start end", ->
-    $('.section.main_car_animation .program3').removeClass("car-active")
-    $('.section.main_car_animation .program4').addClass("car-active")
+    ob_3 = '.section.main_car_animation .program3'
+    ob_4 = '.section.main_car_animation .program4'
+    process2Obj ob_3, ob_4
 
-    $('.section.main_car_animation .info-3').removeClass("car-active")
-    $('.section.main_car_animation .info-4').addClass("car-active")
+    ob_3 = '.section.main_car_animation .info-3'
+    ob_4 = '.section.main_car_animation .info-4'
+    process3Obj ob_3, ob_4
 
-    $('.section.main_car_animation .bottom-right-3').removeClass("car-active")
-    $('.section.main_car_animation .bottom-right-4').addClass("car-active")
+    ob_3 = '.section.main_car_animation .bottom-right-3'
+    ob_4 = '.section.main_car_animation .bottom-right-4'
+    process3Obj ob_3, ob_4
 
     $('.section.main_car_animation .bottom-left').addClass("car-active")
+
+    $('.section.main_car_animation .car-3').removeClass("car-active")
 
     $('.section.main_car_animation .round-3').removeClass("car-active")
     $('.section.main_car_animation .round-4').addClass("car-active")
   .addTo(window.controller)
   #.addIndicators()
 
-
-  car_anim = new TimelineMax()
-  .to($('.section.main_car_animation .car-1'), 1, {opacity: 0})
-
-  window.scene_car_1_hide = new ScrollMagic.Scene
-    triggerElement: "#car-screen"
-    duration: '20%'
-    offset: window.screen_h * 0.8
-    triggerHook: 0
-  .setTween(car_anim)
-  .addTo(window.controller)
-
-  car_anim = new TimelineMax()
-  .to($('.section.main_car_animation .car-2'), 1, {opacity: 1})
-
-  window.scene_car_2_show = new ScrollMagic.Scene
-    triggerElement: "#car-screen"
-    duration: '20%'
-    offset: window.screen_h * 0.8
-    triggerHook: 0
-  .setTween(car_anim)
-  .addTo(window.controller)
-
-
-  car_anim = new TimelineMax()
-  .to($('.section.main_car_animation .car-2'), 1, {opacity: 0})
-
-  window.scene_car_2_hide = new ScrollMagic.Scene
-    triggerElement: "#car-screen"
-    duration: '20%'
-    offset: window.screen_h * 1.8
-    triggerHook: 0
-  .setTween(car_anim)
-  .addTo(window.controller)
-
-  car_anim = new TimelineMax()
-  .to($('.section.main_car_animation .car-3'), 1, {opacity: 1})
-
-  window.scene_car_3_show = new ScrollMagic.Scene
-    triggerElement: "#car-screen"
-    duration: '20%'
-    offset: window.screen_h * 1.8
-    triggerHook: 0
-  .setTween(car_anim)
-  .addTo(window.controller)
-
-
-  car_anim = new TimelineMax()
-  .to($('.section.main_car_animation .car-3'), 1, {opacity: 0})
-
-  window.scene_car_3_hide = new ScrollMagic.Scene
-    triggerElement: "#car-screen"
-    duration: '20%'
-    offset: window.screen_h * 2.8
-    triggerHook: 0
-  .setTween(car_anim)
-  .addTo(window.controller)
 
 
   window.scene_slides_pin = new ScrollMagic.Scene
