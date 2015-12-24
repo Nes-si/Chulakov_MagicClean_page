@@ -8,21 +8,11 @@ head
 
   script(src="javascripts/vendor.js")
   script(src="javascripts/app.js")
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js")
 
   script.
     require('initialize');
 
 body
-  .section.start#section-start
-    .container
-      .text
-        .first-line оборудование класса
-        .second-line premium
-        .third-line для автомоек самообслуживания
-      a.arrow.smoothScroll(href="#section-business")
-        img(src="../pics/section.start.arrow.svg")
-
   .section.business#section-business
     .container
       .block
@@ -247,32 +237,4 @@ body
           img(src="../pics/section.request.circle.svg")
           p Комплект поставки
 
-
-  .section.bottom_menu
-    .menu
-      .item
-        p Аксессуары
-      .item
-        p Конструкции
-      .item
-        p Химия
-
-
-  .section.footer
-    .element.logo
-      img(src="../pics/section.footer.logo.png")
-    .element.contact
-      .city Ростов-на-Дону
-      .phone +7 (863) 226 47 04
-    .element.contact
-      .city Москва
-      .phone +7 (495) 317 12 91
-    .element.btn.catalog Скачать каталог
-    .element.social
-      a.item.fb(href="http://facebook.com")
-        img(src="../pics/section.footer.social.fb.svg")
-      a.item.vk(href="http://vk.com")
-        img(src="../pics/section.footer.social.vk.svg")
-      a.item.yt(href="http://youtube.com")
-        img(src="../pics/section.footer.social.yt.svg")
 
