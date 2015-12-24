@@ -284,21 +284,6 @@ scrollMagicUpdate = ->
   window.scene_car_4_to_null.duration('100%')
   window.scene_car_4_to_null.offset(window.screen_h * 3)
 
-  window.scene_car_1_hide.duration('20%')
-  window.scene_car_1_hide.offset(window.screen_h * 0.8)
-
-  window.scene_car_2_show.duration('20%')
-  window.scene_car_2_show.offset(window.screen_h * 0.8)
-
-  window.scene_car_2_hide.duration('20%')
-  window.scene_car_2_hide.offset(window.screen_h * 1.8)
-
-  window.scene_car_3_show.duration('20%')
-  window.scene_car_3_show.offset(window.screen_h * 1.8)
-
-  window.scene_car_3_hide.duration('20%')
-  window.scene_car_3_hide.offset(window.screen_h * 2.8)
-
   window.scene_slides_pin.duration(window.screen_h / 2)
 
   window.scene_slides_lens_show.duration(window.screen_h / 2)
