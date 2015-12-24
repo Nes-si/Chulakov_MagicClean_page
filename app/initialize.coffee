@@ -117,7 +117,7 @@ scrollMagicInit = ->
     $('.section.main_car_animation .round-1').addClass("car-active")
     $('.section.main_car_animation .round-2').removeClass("car-active")
   .addTo(window.controller)
-  .addIndicators()
+  #.addIndicators()
 
 
   window.scene_car_2_to_3 = new ScrollMagic.Scene
