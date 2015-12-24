@@ -36,7 +36,7 @@
   .container
     height: 100vh
     min-height: 400px
-    padding-top: 6vh
+    padding-top: 5vh
 
     text-align: left
     font-size: 0
@@ -194,7 +194,7 @@
       +tablet
         padding: 0 20px
 
-      height: 10vh
+      height: 100px
       bottom: 3vh
       font-size: 0
       text-align: left
@@ -229,6 +229,8 @@
             position: absolute
             left: 0
             top: -70px
+            +max-screen-height(750px)
+              display: none
 
           .title
             font-weight: 600
