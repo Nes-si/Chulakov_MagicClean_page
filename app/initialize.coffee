@@ -320,6 +320,8 @@ window.screen_h = 0
 
 window.sm_inited = 0
 
+window.pult_elem = 0
+
 
 $ ->
   onResize()
@@ -336,6 +338,24 @@ $ ->
 
   $('.next.btn').click ->
     $('.slider').slick('slickNext')
+
+
+  $('.section.pults td').each (i, elem) ->
+    $(elem).hover((e) ->
+      $(elem).find('.caption')
+        .addClass('pult-td-active')
+      $(elem).find('p')
+        .addClass('pult-td-active')
+      window.pult_elem = i
+    , (e) ->
+      $(elem).find('.caption')
+        .removeClass('pult-td-active')
+      $(elem).find('p')
+        .removeClass('pult-td-active')
+      window.pult_elem = 0
+    )
+
+
 
   window.car_btn_active = 1
 
