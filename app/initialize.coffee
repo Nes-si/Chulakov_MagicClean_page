@@ -241,6 +241,9 @@ scrollMagicInit = ->
     $('.section.slideshow .lens').css('display', 'none')
   .addTo(window.controller)
 
+  window.sm_inited = 1
+
+###
   lens_opacity = new TimelineMax()
   .to($('.section.slideshow .lens'), 1, {opacity: 0, ease: Power0.easeNone})
 
@@ -252,6 +255,7 @@ scrollMagicInit = ->
   .setTween(lens_opacity)
   .addTo(window.controller)
 
+
   slider_opacity = new TimelineMax()
   .to($('.section.slideshow .slider .pic'), 1, {opacity: 1, ease: Power0.easeNone})
 
@@ -262,8 +266,8 @@ scrollMagicInit = ->
     offset: window.screen_h / 4
   .setTween(slider_opacity)
   .addTo(window.controller)
+###
 
-  window.sm_inited = 1
 
 
 scrollMagicUpdate = ->
