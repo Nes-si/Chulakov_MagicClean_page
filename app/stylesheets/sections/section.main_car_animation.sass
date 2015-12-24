@@ -7,7 +7,7 @@
   position: relative
   height: 100vh
   background-color: #97e5ec
-  overflow-x: hidden
+  overflow: hidden
 
 
   .caption
@@ -58,11 +58,6 @@
         line-height: 50.71px
         text-transform: uppercase
 
-        opacity: 0
-        transition-delay: 0ms
-        transition-duration: 500ms
-
-
 
     .info-cont
       position: relative
@@ -77,10 +72,6 @@
         font-size: 16px
         line-height: 26px
         color: black
-
-        opacity: 0
-        transition-delay: 0ms
-        transition-duration: 500ms
 
       .info-1
         width: 400px
@@ -217,10 +208,6 @@
         .bottom-left
           position: absolute
 
-          opacity: 0
-          transition-delay: 0ms
-          transition-duration: 500ms
-
           .text
             font-family: $f_helvetica
             font-weight: 300
@@ -237,10 +224,6 @@
         .bottom-right
           position: absolute
           font-family: $f_helvetica
-
-          opacity: 0
-          transition-delay: 0ms
-          transition-duration: 500ms
 
           img
             position: absolute
@@ -273,6 +256,18 @@
 .car-active
   opacity: 1 !important
   transition-delay: 500ms !important
+
+.car-element-passive
+  opacity: 0
+  transition-delay: 0ms
+  transition-duration: 500ms, 500ms
+  transform: translate3D(0, -50px , 0)
+  transition-property: opacity, transform
+
+.car-element-active
+  opacity: 1 !important
+  transition-delay: 500ms, 0ms !important
+  transform: translate3D(0, 0, 0) !important
 
 .button-active
   color: white !important
