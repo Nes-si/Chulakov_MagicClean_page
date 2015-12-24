@@ -352,15 +352,15 @@ $ ->
   $('.section.main_car_animation .btn1').click ->
     $('.section.main_car_animation .btn1').addClass('button-active')
     $('.section.main_car_animation .btn2').removeClass('button-active')
-    $('.section.main_car_animation .bottom-right-1-1').addClass('car-active')
-    $('.section.main_car_animation .bottom-right-1-2').removeClass('car-active')
+    $('.section.main_car_animation .bottom-right-1-1').addClass('car-element-active')
+    $('.section.main_car_animation .bottom-right-1-2').removeClass('car-element-active')
     window.car_btn_active = 1
 
   $('.section.main_car_animation .btn2').click ->
     $('.section.main_car_animation .btn1').removeClass('button-active')
     $('.section.main_car_animation .btn2').addClass('button-active')
-    $('.section.main_car_animation .bottom-right-1-1').removeClass('car-active')
-    $('.section.main_car_animation .bottom-right-1-2').addClass('car-active')
+    $('.section.main_car_animation .bottom-right-1-1').removeClass('car-element-active')
+    $('.section.main_car_animation .bottom-right-1-2').addClass('car-element-active')
     window.car_btn_active = 2
 
   scrollMagicInit()
