@@ -256,6 +256,82 @@ scrollMagicUpdate = ->
   #window.scene_slides_slider_opacity.offset(window.screen_h / 4)
 
 
+iPadScrollInit = ->
+  $('.section.main_car_animation .ipad-scroll').css('display', 'block')
+
+  $('.section.main_car_animation .caption').each (i, elem) ->
+    $(elem).addClass('caption-iPad')
+    $(elem).addClass('car-element-passive')
+    if i == 0
+      $(elem).addClass('car-element-active')
+
+
+  ipadPageChange = (pageFrom, pageTo) ->
+    $('.section.main_car_animation .program' + pageTo).addClass("car-element-active")
+    $('.section.main_car_animation .program' + pageFrom).removeClass("car-element-active")
+
+    $('.section.main_car_animation .info-' + pageTo).addClass("car-element-active")
+    $('.section.main_car_animation .info-' + pageFrom).removeClass("car-element-active")
+
+    if pageTo == 1
+      $('.section.main_car_animation .bottom-right-' + pageTo + '-' + window.car_btn_active).addClass("car-element-active")
+    else
+      $('.section.main_car_animation .bottom-right-' + pageTo).addClass("car-element-active")
+
+    if pageFrom == 1
+      $('.section.main_car_animation .bottom-right-' + pageFrom + '-' + window.car_btn_active).removeClass("car-element-active")
+    else
+      $('.section.main_car_animation .bottom-right-' + pageFrom).removeClass("car-element-active")
+
+    $('.section.main_car_animation .caption' + pageTo).addClass("car-element-active")
+    $('.section.main_car_animation .caption' + pageFrom).removeClass("car-element-active")
+
+    $('.section.main_car_animation .car-' + pageTo).addClass("car-active")
+    if pageFrom != 4
+      $('.section.main_car_animation .car-' + pageFrom).removeClass("car-active")
+
+    $('.section.main_car_animation .round-' + pageTo).addClass("car-active")
+    $('.section.main_car_animation .round-' + pageFrom).removeClass("car-active")
+
+
+  $('.section.main_car_animation .next.scroll-btn').click ->
+    switch window.iPadPage
+      when 1
+        ipadPageChange(1, 2)
+        TweenMax.to($('.section.main_car_animation'), 0.5, {backgroundColor: "#97d9ec", ease: Power0.easeNone})
+        $('.section.main_car_animation .prev.scroll-btn').removeClass('scroll-btn-inactive')
+      when 2
+        ipadPageChange(2, 3)
+        TweenMax.to($('.section.main_car_animation'), 0.5, {backgroundColor: "#97c1ec", ease: Power0.easeNone})
+      when 3
+        ipadPageChange(3, 4)
+        TweenMax.to($('.section.main_car_animation'), 0.5, {backgroundColor: "#82bcf8", ease: Power0.easeNone})
+      else
+        window.iPadPage--
+    window.iPadPage++
+    if (window.iPadPage > 3)
+      $('.section.main_car_animation .next.scroll-btn').addClass('scroll-btn-inactive')
+
+  $('.section.main_car_animation .prev.scroll-btn').click ->
+    switch window.iPadPage
+      when 2
+        ipadPageChange(2, 1)
+        TweenMax.to($('.section.main_car_animation'), 0.5, {backgroundColor: "#97e5ec", ease: Power0.easeNone})
+      when 3
+        ipadPageChange(3, 2)
+        TweenMax.to($('.section.main_car_animation'), 0.5, {backgroundColor: "#97d9ec", ease: Power0.easeNone})
+      when 4
+        ipadPageChange(4, 3)
+        TweenMax.to($('.section.main_car_animation'), 0.5, {backgroundColor: "#82bcf8", ease: Power0.easeNone})
+        $('.section.main_car_animation .next.scroll-btn').removeClass('scroll-btn-inactive')
+      else
+        window.iPadPage++
+    window.iPadPage--
+    if (window.iPadPage < 2)
+      $('.section.main_car_animation .prev.scroll-btn').addClass('scroll-btn-inactive')
+
+
+
 onResize = ->
   window.screen_w = document.documentElement.clientWidth
   window.screen_h = document.documentElement.clientHeight
@@ -282,12 +358,12 @@ onResize = ->
     $('.section.new_level .container').css('padding-bottom', containerPadding + 'px')
     $('.section.new_level .block-text').css('width', textWidth + '%')
   else
-
     $('.section.new_level .cleaner-pic').css('transform', 'scale(1)')
     $('.section.new_level .cleaner-pic').css('right', '3.5%')
     $('.section.new_level .container').css('padding-top', '100px')
     $('.section.new_level .container').css('padding-bottom', '100px')
     $('.section.new_level .block-text').css('width', '65%')
+
 
   if window.screen_w < 810
     btnScale = window.screen_w / 810 / 1.5 + 0.25
@@ -296,6 +372,17 @@ onResize = ->
   else
     $('.section.main_car_animation .button').each (i, elem) ->
       $(elem).css('transform', 'scale(1)')
+
+
+  if window.screen_w < 1250 and window.isiPad
+    console.log 'yes'
+    captSize = window.screen_w / 1250 * 120
+    $('.section.main_car_animation .caption').each (i, elem) ->
+      $(elem).css('font-size', captSize + 'px')
+  else
+    console.log 'no'
+    $('.section.main_car_animation .caption').each (i, elem) ->
+      $(elem).css('font-size', '120px')
 
   $('.section.main_car_animation .info-bottom-cont').height($('.section.main_car_animation .bottom-right').height())
 
@@ -312,8 +399,13 @@ window.sm_inited = 0
 
 window.pult_elem = 0
 
+window.isiPad = false
+window.iPadPage = 1
+
 
 $ ->
+  window.isiPad = navigator.userAgent.match(/iPad/i) != null
+
   onResize()
 
   $('.slider').slick
@@ -324,10 +416,10 @@ $ ->
     fade: true
     cssEase: 'linear'
 
-  $('.prev.btn').click ->
+  $('.section.slideshow .prev.btn').click ->
     $('.slider').slick('slickPrev')
 
-  $('.next.btn').click ->
+  $('.section.slideshow .next.btn').click ->
     $('.slider').slick('slickNext')
 
 
@@ -363,7 +455,10 @@ $ ->
     $('.section.main_car_animation .bottom-right-1-2').addClass('car-element-active')
     window.car_btn_active = 2
 
-  scrollMagicInit()
+  if window.isiPad
+    iPadScrollInit()
+  else
+    scrollMagicInit()
 
 
 

@@ -9,11 +9,32 @@
   background-color: #97e5ec
   overflow: hidden
 
+  .ipad-scroll
+    position: absolute
+    top: 45%
+    width: 100%
+    left: 0
+    padding: 0 30px
+    +tablet
+      padding: 0 20px
+
+    display: none
+
+    .prev.scroll-btn
+      float: left
+      transform: scale(-1, 1)
+    .next.scroll-btn
+      float: right
+
+    .scroll-btn:hover
+      opacity: 0.6
+      cursor: pointer
+
 
   .caption
     position: absolute
     top: 45%
-    left: 0%
+    left: -2%
 
     color: white
     font-family: $f_helvetica
@@ -31,6 +52,8 @@
 
       background-image: url("../pics/section.main_car_animation.mineral.png")
       background-repeat: no-repeat
+
+
 
 
   .container
@@ -255,6 +278,7 @@
 
 
 
+
 .car-active
   opacity: 1 !important
   transition-delay: 500ms !important
@@ -275,4 +299,16 @@
   color: white !important
   background-color: #3aa8b3 !important
 
+.scroll-btn-inactive
+  opacity: 0.3
 
+.scroll-btn-inactive:hover
+  opacity: 0.3 !important
+  cursor: default
+
+.caption-iPad
+  top: 22% !important
+  left: 30px !important
+  +tablet
+    left: 20px !important
+  transform: translateX(0%) !important
