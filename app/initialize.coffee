@@ -330,6 +330,9 @@ iPadScrollInit = ->
     if (window.iPadPage < 2)
       $('.section.main_car_animation .prev.scroll-btn').addClass('scroll-btn-inactive')
 
+  $('.section.slideshow').css('min-height', '100vh')
+  $('.section.slideshow .lens').css('display', 'none')
+
 
 
 onResize = ->
