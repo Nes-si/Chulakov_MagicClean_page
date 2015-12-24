@@ -117,9 +117,12 @@
         height: 8%
 
         transform: translateY(-50%)
+        transition-duration: 0.5s
 
         background: url('../pics/section.slideshow.arrow.svg') center center no-repeat
         background-size: cover
+
+        opacity: 0
 
       .btn:hover
         opacity: 0.5
@@ -132,6 +135,10 @@
       .next
         right: -10%
         top: 50%
+
+      .btn-active
+        opacity: 1 !important
+
 
 
 

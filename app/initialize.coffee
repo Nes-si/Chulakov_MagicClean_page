@@ -35,11 +35,12 @@ scrollMagicInit = ->
 
   captionEase = SlowMo.ease.config(0.2, 0.3, false)
 
+  captionOffset = window.screen_w * 1.1
   caption = new TimelineMax()
-  .to($('.section.main_car_animation .caption1'), 1, {'transform': 'translate3D(' + window.screen_w + 'px, 0, 0)', ease: captionEase})
-  .to($('.section.main_car_animation .caption2'), 1, {'transform': 'translate3D(' + window.screen_w + 'px, 0, 0)', ease: captionEase})
-  .to($('.section.main_car_animation .caption3'), 1, {'transform': 'translate3D(' + window.screen_w + 'px, 0, 0)', ease: captionEase})
-  .to($('.section.main_car_animation .caption4'), 1, {'transform': 'translate3D(' + window.screen_w + 'px, 0, 0)', ease: captionEase})
+  .to($('.section.main_car_animation .caption1'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  .to($('.section.main_car_animation .caption2'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  .to($('.section.main_car_animation .caption3'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  .to($('.section.main_car_animation .caption4'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
 
   window.scene_car_caption_move = new ScrollMagic.Scene
     triggerElement: "#car-screen"
@@ -186,6 +187,8 @@ scrollMagicInit = ->
   .setPin('#slideshow img.pinned')
   .on "end", ->
     $('.section.slideshow .lens').css('display', 'block')
+    $('.section.slideshow .btn.prev').removeClass('btn-active')
+    $('.section.slideshow .btn.next').removeClass('btn-active')
   .addTo(window.controller)
 
   window.scene_slides_lens_hide = new ScrollMagic.Scene
@@ -194,6 +197,8 @@ scrollMagicInit = ->
     duration: window.screen_h / 2
   .on "start", ->
     $('.section.slideshow .lens').css('display', 'none')
+    $('.section.slideshow .btn.prev').addClass('btn-active')
+    $('.section.slideshow .btn.next').addClass('btn-active')
   .addTo(window.controller)
 
   window.sm_inited = 1
