@@ -36,17 +36,23 @@ carwashes__scrollMagicInit = ->
   captionEase = SlowMo.ease.config(0.2, 0.3, false)
 
   captionOffset = window.carwashes__screen_w * 1.1
-  caption = new TimelineMax()
-  .to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption1'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
-  .to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption2'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
-  .to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption3'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
-  .to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption4'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+
+  window.carwashes__captionTween1 = TweenMax.to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption1'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween2 = TweenMax.to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption2'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween3 = TweenMax.to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption3'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween4 = TweenMax.to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption4'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+
+  window.carwashes__captionTimeline = new TimelineMax()
+  window.carwashes__captionTimeline.add(window.carwashes__captionTween1)
+  window.carwashes__captionTimeline.add(window.carwashes__captionTween2)
+  window.carwashes__captionTimeline.add(window.carwashes__captionTween3)
+  window.carwashes__captionTimeline.add(window.carwashes__captionTween4)
 
   window.carwashes__scene_car_caption_move = new ScrollMagic.Scene
     triggerElement: "#carwashes__car-screen"
     duration: '400%'
     triggerHook: 0
-  .setTween(caption)
+  .setTween(window.carwashes__captionTimeline)
   #.addIndicators()
   .addTo(window.controller)
 
@@ -254,7 +260,19 @@ carwashes__scrollMagicUpdate = ->
 
   window.carwashes__scene_slides_lens_hide.duration(window.carwashes__screen_h / 2)
 
-  console.log('resize')
+  captionOffset = window.carwashes__screen_w * 1.1
+  captionEase = SlowMo.ease.config(0.2, 0.3, false)
+  window.carwashes__captionTween1.progress(0)
+  window.carwashes__captionTween2.progress(0)
+  window.carwashes__captionTween3.progress(0)
+  window.carwashes__captionTween4.progress(0)
+  window.carwashes__captionTween1.updateTo({'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween2.updateTo({'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween3.updateTo({'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween4.updateTo({'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__scene_car_caption_move.setTween(window.carwashes__captionTimeline)
+
+
 
   #window.carwashes__scene_slides_lens_opacity.duration(window.carwashes__screen_h / 4)
   #window.carwashes__scene_slides_lens_opacity.offset(window.carwashes__screen_h / 4)
@@ -399,10 +417,6 @@ carwashes__onResize = ->
 
 
 
-
-window.carwashes__screen_w = 0
-window.carwashes__screen_h = 0
-
 window.carwashes__sm_inited = 0
 
 window.carwashes__pult_elem = 0
@@ -413,10 +427,9 @@ window.carwashes__iPadPage = 1
 
 $ ->
   window.carwashes__isiPad = navigator.userAgent.match(/iPad/i) != null
+  #window.carwashes__isiPad = true
 
   carwashes__onResize()
-
-
 
   $('.carwashes__section.carwashes__slideshow .carwashes__prev.carwashes__btn').click ->
     $('.carwashes__slider').slick('slickPrev')
