@@ -1,51 +1,28 @@
-//@import "bourbon/bourbon"
+@import "bourbon/bourbon"
 @import 'tools/_mixins'
 //@import 'tools/_flexbox'
-//@import 'tools/_helpers'
+@import 'tools/_helpers'
 @import 'tools/_media_queries'
 @import 'tools/_normalize'
-//@import 'tools/_settings'
+@import 'tools/_settings'
 
 
 
-//@include font-face('f_opens', '../fonts/OpenSans/opensans-light-webfont', 300, normal)
-//@include font-face('f_opens', '../fonts/OpenSans/opensans-regular-webfont', 400, normal)
-//@include font-face('f_opens', '../fonts/OpenSans/opensans-bold-webfont', 600, normal)
+@include font-face('f_opens', '../fonts/OpenSans/opensans-light-webfont', 300, normal)
+@include font-face('f_opens', '../fonts/OpenSans/opensans-regular-webfont', 400, normal)
+@include font-face('f_opens', '../fonts/OpenSans/opensans-bold-webfont', 600, normal)
 
-//@include font-face('f_helvetica', '../fonts/Helvetica/helveticaneuecyr-light-webfont', 300, normal)
-//@include font-face('f_helvetica', '../fonts/Helvetica/helveticaneuecyr-medium-webfont', 400, normal)
-//@include font-face('f_helvetica', '../fonts/Helvetica/helveticaneuecyr-bold-webfont', 600, normal)
+@include font-face('f_helvetica', '../fonts/Helvetica/helveticaneuecyr-light-webfont', 300, normal)
+@include font-face('f_helvetica', '../fonts/Helvetica/helveticaneuecyr-medium-webfont', 400, normal)
+@include font-face('f_helvetica', '../fonts/Helvetica/helveticaneuecyr-bold-webfont', 600, normal)
 
-*
-  box-sizing: border-box
-
-.carwashes__container
-  width: 100%
-  max-width: 1140px
-  min-width: 768px
-  min-height: 100%
-  margin: 0 auto
-  position: relative
-  padding-left: 30px
-  padding-right: 30px
-  text-align: center
-  +tablet
-    padding: 0 20px
-  +mobile
-    padding: 0 10px
-
-.carwashes__container:before,
-.carwashes__container:after
-  content: ""
-  display: table
-.carwashes__container:after
-  clear: both
 
 body
   color: black
 
 p
   margin-top: 0
+  margin-bottom: 16px
 
 strong
   font-weight: 600
