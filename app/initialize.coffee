@@ -294,6 +294,9 @@ carwashes__scrollMagicUpdate = ->
 
 
 carwashes__iPadScrollInit = ->
+  $('.carwashes__section.carwashes__slideshow .carwashes__btn.carwashes__prev').addClass('carwashes__btn-active')
+  $('.carwashes__section.carwashes__slideshow .carwashes__btn.carwashes__next').addClass('carwashes__btn-active')
+
   $('.carwashes__section.carwashes__main_car_animation .carwashes__ipad-scroll').css('display', 'block')
 
   $('.carwashes__section.carwashes__main_car_animation .carwashes__caption').each (i, elem) ->
@@ -331,12 +334,12 @@ carwashes__iPadScrollInit = ->
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-' + pageFrom).removeClass("carwashes__car-active")
 
 
-  $('.carwashes__section.carwashes__main_car_animation .carwashes__next.carwashes__scroll-btn').click ->
+  $('.carwashes__section.carwashes__main_car_animation .carwashes__scroll-btn-next').click ->
     switch window.carwashes__iPadPage
       when 1
         ipadPageChange(1, 2)
         TweenMax.to($('.carwashes__section.carwashes__main_car_animation'), 0.5, {backgroundColor: "#97d9ec", ease: Power0.easeNone})
-        $('.carwashes__section.carwashes__main_car_animation .carwashes__prev.carwashes__scroll-btn').removeClass('carwashes__scroll-btn-inactive')
+        $('.carwashes__section.carwashes__main_car_animation .carwashes__scroll-btn-prev').removeClass('carwashes__scroll-btn-inactive')
       when 2
         ipadPageChange(2, 3)
         TweenMax.to($('.carwashes__section.carwashes__main_car_animation'), 0.5, {backgroundColor: "#97c1ec", ease: Power0.easeNone})
@@ -347,9 +350,9 @@ carwashes__iPadScrollInit = ->
         window.carwashes__iPadPage--
     window.carwashes__iPadPage++
     if (window.carwashes__iPadPage > 3)
-      $('.carwashes__section.carwashes__main_car_animation .carwashes__next.carwashes__scroll-btn').addClass('carwashes__scroll-btn-inactive')
+      $('.carwashes__section.carwashes__main_car_animation .carwashes__scroll-btn-next').addClass('carwashes__scroll-btn-inactive')
 
-  $('.carwashes__section.carwashes__main_car_animation .carwashes__prev.carwashes__scroll-btn').click ->
+  $('.carwashes__section.carwashes__main_car_animation .carwashes__scroll-btn-prev').click ->
     switch window.carwashes__iPadPage
       when 2
         ipadPageChange(2, 1)
@@ -360,12 +363,12 @@ carwashes__iPadScrollInit = ->
       when 4
         ipadPageChange(4, 3)
         TweenMax.to($('.carwashes__section.carwashes__main_car_animation'), 0.5, {backgroundColor: "#82bcf8", ease: Power0.easeNone})
-        $('.carwashes__section.carwashes__main_car_animation .carwashes__next.carwashes__scroll-btn').removeClass('carwashes__scroll-btn-inactive')
+        $('.carwashes__section.carwashes__main_car_animation .carwashes__scroll-btn-next').removeClass('carwashes__scroll-btn-inactive')
       else
         window.carwashes__iPadPage++
     window.carwashes__iPadPage--
     if (window.carwashes__iPadPage < 2)
-      $('.carwashes__section.carwashes__main_car_animation .carwashes__prev.carwashes__scroll-btn').addClass('carwashes__scroll-btn-inactive')
+      $('.carwashes__section.carwashes__main_car_animation .carwashes__scroll-btn-prev').addClass('carwashes__scroll-btn-inactive')
 
   $('.carwashes__section.carwashes__slideshow').css('min-height', '100vh')
   $('.carwashes__section.carwashes__slideshow .carwashes__lens').css('display', 'none')
@@ -434,6 +437,8 @@ carwashes__onResize = ->
     speed: 500
     fade: true
     cssEase: 'linear'
+
+
 
 
 
