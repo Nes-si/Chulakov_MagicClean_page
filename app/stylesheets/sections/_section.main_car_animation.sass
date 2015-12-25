@@ -3,13 +3,13 @@
 @import '../tools/_mixins'
 
 
-.section.main_car_animation
+.carwashes__section.carwashes__main_car_animation
   position: relative
   height: 100vh
   background-color: #97e5ec
   overflow: hidden
 
-  .ipad-scroll
+  .carwashes__ipad-scroll
     position: absolute
     top: 45%
     width: 100%
@@ -20,30 +20,30 @@
 
     display: none
 
-    .prev.scroll-btn
+    .carwashes__prev.carwashes__scroll-btn
       float: left
       transform: scale(-1, 1)
-    .next.scroll-btn
+    .carwashes__next.carwashes__scroll-btn
       float: right
 
-    .scroll-btn:hover
+    .carwashes__scroll-btn:hover
       opacity: 0.6
       cursor: pointer
 
 
-  .caption
+  .carwashes__caption
     position: absolute
     top: 45%
     left: -2%
 
     color: white
-    font-family: $f_helvetica
+    font-family: $carwashes__f_helvetica
     font-weight: 600
     font-size: 150px
     text-transform: uppercase
     transform: translateX(-100%)
 
-    .comment
+    .carwashes__comment
       font-size: 16px
       width: 250px
       padding-left: 30px
@@ -56,7 +56,7 @@
 
 
 
-  .container
+  .carwashes__container
     height: 100vh
     min-height: 400px
     padding-top: 5vh
@@ -64,42 +64,42 @@
     text-align: left
     font-size: 0
 
-    .program-cont
+    .carwashes__program-cont
       position: relative
       display: inline-block
       width: 50%
       vertical-align: top
       opacity: 0.7
 
-      .program
+      .carwashes__program
         position: absolute
         width: 300px
 
-        font-family: $f_helvetica
+        font-family: $carwashes__f_helvetica
         font-weight: 300
         font-size: 35.1px
         line-height: 50.71px
         text-transform: uppercase
 
 
-    .info-cont
+    .carwashes__info-cont
       position: relative
       display: inline-block
       width: 45%
       opacity: 0.7
 
-      .info
+      .carwashes__info
         position: absolute
-        font-family: $f_helvetica
+        font-family: $carwashes__f_helvetica
         font-weight: 300
         font-size: 16px
         line-height: 26px
         color: black
 
-      .info-1
+      .carwashes__info-1
         width: 400px
 
-        .button
+        .carwashes__button
           display: inline-block
           margin-right: 10px
           padding: 15px 30px
@@ -109,14 +109,14 @@
 
           cursor: pointer
 
-        .button:last-child
+        .carwashes__button:last-child
           margin-right: 0
 
-        .button:hover
+        .carwashes__button:hover
           color: white
           background-color: #3aa8b3
 
-      .info-2
+      .carwashes__info-2
         img
           opacity: 1
           margin-bottom: 10px
@@ -127,12 +127,12 @@
         p:last-of-type
           font-weight: 600
 
-      .info-4
+      .carwashes__info-4
         p:first-child
           margin-bottom: 20px
 
 
-    .content-container
+    .carwashes__content-container
       position: absolute
       top: 60%
       left: 50%
@@ -141,11 +141,11 @@
 
       transform: translateX(-50%) translateY(-50%)
 
-      .content
+      .carwashes__content
         position: absolute
         background-repeat: no-repeat
 
-      .cleaner
+      .carwashes__cleaner
         bottom: 35px
         right: 75px
         width: 140px
@@ -153,9 +153,10 @@
 
         background-image: url("../pics/section.main_car_animation.cleaner.png")
 
-      .round
+      .carwashes__round
         height: 10px
         width: 10px
+        right: 145px
 
         background-color: white
         border: 3px solid #ff1300
@@ -165,24 +166,20 @@
         transition-delay: 0ms
         transition-duration: 500ms
 
-      .round-1
-        right: 145px
+      .carwashes__round-1
         bottom: 250px
 
-      .round-2
-        right: 145px
+      .carwashes__round-2
         bottom: 240px
 
-      .round-3
-        right: 145px
+      .carwashes__round-3
         bottom: 230px
 
-      .round-4
-        right: 145px
+      .carwashes__round-4
         bottom: 220px
 
 
-      .car-shadow
+      .carwashes__car-shadow
         bottom: 0
         left: 45px
         width: 569px
@@ -190,7 +187,7 @@
 
         background-image: url("../pics/section.main_car_animation.car_shadow.png")
 
-      .car
+      .carwashes__car
         bottom: 17px
         width: 630px
         height: 193px
@@ -199,17 +196,17 @@
         transition-delay: 0ms
         transition-duration: 500ms
 
-      .car-1
+      .carwashes__car-1
         background-image: url("../pics/section.main_car_animation.car1.png")
-      .car-2
+      .carwashes__car-2
         background-image: url("../pics/section.main_car_animation.car2.png")
-      .car-3
+      .carwashes__car-3
         background-image: url("../pics/section.main_car_animation.car3.png")
-      .car-4
+      .carwashes__car-4
         background-image: url("../pics/section.main_car_animation.car4.png")
 
 
-    .info-bottom-cont
+    .carwashes__info-bottom-cont
       position: absolute
       width: 100%
       left: 0
@@ -222,31 +219,31 @@
       font-size: 0
       text-align: left
 
-      .bottom-left-cont
+      .carwashes__bottom-left-cont
         display: inline-block
         position: relative
         vertical-align: top
         width: 50%
 
-        .bottom-left
+        .carwashes__bottom-left
           position: absolute
 
-          .text
-            font-family: $f_helvetica
+          .carwashes__text
+            font-family: $carwashes__f_helvetica
             font-weight: 300
             font-size: 16px
             line-height: 26px
             opacity: 0.7
 
-      .bottom-right-cont
+      .carwashes__bottom-right-cont
         display: inline-block
         vertical-align: top
         width: 50%
         position: relative
 
-        .bottom-right
+        .carwashes__bottom-right
           position: absolute
-          font-family: $f_helvetica
+          font-family: $carwashes__f_helvetica
 
           img
             position: absolute
@@ -255,22 +252,22 @@
             +max-screen-height(750px)
               display: none
 
-          .title
+          .carwashes__title
             font-weight: 600
             font-size: 16px
             line-height: 22px
             opacity: 0.7
             margin-bottom: 10px
 
-          .text
+          .carwashes__text
             font-weight: 300
             font-size: 16px
             line-height: 26px
             opacity: 0.7
 
 
-        .bottom-right-1-1, .bottom-right-1-2
-          .text
+        .carwashes__bottom-right-1-1, .carwashes__bottom-right-1-2
+          .carwashes__text
             opacity: 0.4
             font-size: 14px
             line-height: 21px
@@ -279,34 +276,34 @@
 
 
 
-.car-active
+.carwashes__car-active
   opacity: 1 !important
   transition-delay: 500ms !important
 
-.car-element-passive
+.carwashes__car-element-passive
   opacity: 0
   transition-delay: 0ms
   transition-duration: 500ms, 500ms
   transform: translate3D(0, -50px , 0)
   transition-property: opacity, transform
 
-.car-element-active
+.carwashes__car-element-active
   opacity: 1 !important
   transition-delay: 500ms, 0ms !important
   transform: translate3D(0, 0, 0) !important
 
-.button-active
+.carwashes__button-active
   color: white !important
   background-color: #3aa8b3 !important
 
-.scroll-btn-inactive
+.carwashes__scroll-btn-inactive
   opacity: 0.3
 
-.scroll-btn-inactive:hover
+.carwashes__scroll-btn-inactive:hover
   opacity: 0.3 !important
   cursor: default
 
-.caption-iPad
+.carwashes__caption-iPad
   top: 22% !important
   left: 30px !important
   +tablet

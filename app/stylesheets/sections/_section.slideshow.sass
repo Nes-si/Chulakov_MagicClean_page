@@ -1,26 +1,26 @@
 @import '../_fonts'
 
-.section.slideshow
+.carwashes__section.carwashes__slideshow
   background-color: white
   min-height: 150vh
   width: 100%
   position: relative
 
 
-  .container
+  .carwashes__container
     height: 100vh
     padding-top: 5%
 
     color: black
     text-align: left
 
-    .block.pinned
+    .carwashes__block.carwashes__pinned
 
-      .title
+      .carwashes__title
         width: 300px
 
         opacity: 0.7
-        font-family: $f_helvetica
+        font-family: $carwashes__f_helvetica
         font-weight: 300
 
         text-transform: uppercase
@@ -28,37 +28,37 @@
         line-height: 50.71px
 
 
-      .info
+      .carwashes__info
         margin-top: 5%
         width: 260px
 
-        font-family: $f_helvetica
+        font-family: $carwashes__f_helvetica
         font-size: 16px
         line-height: 26px
 
-        .caption
+        .carwashes__caption
           font-weight: 600
 
-        .text
+        .carwashes__text
           margin-top: 10px
           opacity: 0.6
           font-weight: 300
 
-        a.link
+        a.carwashes__link
           display: block
 
           margin-top: 10px
           color: #52b7f7
           font-weight: 600
 
-    img.pinned
+    img.carwashes__pinned
       position: absolute
       left: 50%
       top: 60vh
       transform: translateX(-50%) translateY(-50%)
       z-index: 1
 
-  .block.show
+  .carwashes__block.carwashes__show
     position: absolute
     left: 50%
     bottom: 40vh
@@ -66,7 +66,7 @@
     //width: 600px
     z-index: 10
 
-    .circle-ext
+    .carwashes__circle-ext
       position: relative
       display: inline-block
       padding: 5vh
@@ -74,7 +74,7 @@
       border: 3px #707b8b solid
       background-color: white
 
-      .circle-int
+      .carwashes__circle-int
         overflow: hidden
         position: relative
         width: 55vh
@@ -83,18 +83,18 @@
         border: 3px #707b8b solid
         z-index: 3
 
-        img.lens
+        img.carwashes__lens
           //убрать, если потребуется вернуть прозрачность линзы
           background-color: white
           position: absolute
           width: 100%
           z-index: 2
 
-        .slider
+        .carwashes__slider
           z-index: 1
 
 
-          .pic
+          .carwashes__pic
             display: block
             height: 55vh
             width: 55vh
@@ -103,14 +103,14 @@
             background-position: 50% 50%
             //opacity: 0
 
-          .pic-1
+          .carwashes__pic-1
             background-image: url("http://cs10628.vk.me/u168648930/-7/x_2e2ed933.jpg")
-          .pic-2
+          .carwashes__pic-2
             background-image: url("http://img0.liveinternet.ru/images/attach/c/2//64/340/64340657_Koshki001.jpg")
-          .pic-3
+          .carwashes__pic-3
             background-image: url("http://cs9952.vk.me/u52960895/-14/x_a8ffe9cf.jpg")
 
-      .btn
+      .carwashes__btn
         position: absolute
         top: 50%
         width: 7%
@@ -124,19 +124,19 @@
 
         opacity: 0
 
-      .btn:hover
+      .carwashes__btn:hover
         opacity: 0.5
         cursor: pointer
 
-      .prev
+      .carwashes__prev
         left: -10%
         transform: scale(-1, 1) translateY(-50%)
 
-      .next
+      .carwashes__next
         right: -10%
         top: 50%
 
-      .btn-active
+      .carwashes__btn-active
         opacity: 1 !important
 
 
