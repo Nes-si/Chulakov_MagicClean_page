@@ -427,6 +427,14 @@ carwashes__onResize = ->
   if window.carwashes__sm_inited
     carwashes__scrollMagicUpdate()
 
+  $('.carwashes__slider').slick
+    dots: false
+    arrows: false
+    infinite: true
+    speed: 500
+    fade: true
+    cssEase: 'linear'
+
 
 
 window.carwashes__sm_inited = 0
