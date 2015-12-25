@@ -266,10 +266,22 @@ carwashes__scrollMagicUpdate = ->
   window.carwashes__captionTween2.progress(0)
   window.carwashes__captionTween3.progress(0)
   window.carwashes__captionTween4.progress(0)
-  window.carwashes__captionTween1.updateTo({'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
-  window.carwashes__captionTween2.updateTo({'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
-  window.carwashes__captionTween3.updateTo({'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
-  window.carwashes__captionTween4.updateTo({'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween1.kill
+  window.carwashes__captionTween2.kill
+  window.carwashes__captionTween3.kill
+  window.carwashes__captionTween4.kill
+  window.carwashes__captionTimeline.kill
+
+  window.carwashes__captionTween1 = TweenMax.to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption1'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween2 = TweenMax.to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption2'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween3 = TweenMax.to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption3'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+  window.carwashes__captionTween4 = TweenMax.to($('.carwashes__section.carwashes__main_car_animation .carwashes__caption4'), 1, {'transform': 'translate3D(' + captionOffset + 'px, 0, 0)', ease: captionEase})
+
+  window.carwashes__captionTimeline = new TimelineMax()
+  window.carwashes__captionTimeline.add(window.carwashes__captionTween1)
+  window.carwashes__captionTimeline.add(window.carwashes__captionTween2)
+  window.carwashes__captionTimeline.add(window.carwashes__captionTween3)
+  window.carwashes__captionTimeline.add(window.carwashes__captionTween4)
   window.carwashes__scene_car_caption_move.setTween(window.carwashes__captionTimeline)
 
 
