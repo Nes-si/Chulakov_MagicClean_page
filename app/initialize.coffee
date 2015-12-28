@@ -78,20 +78,33 @@ carwashes__scrollMagicInit = ->
     duration: '100%'
     triggerHook: 0
   .on "start end", ->
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program1').addClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program2').removeClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-1').addClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-2').removeClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-1-' + window.carwashes__car_btn_active).addClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-2').removeClass("carwashes__car-element-active")
-
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-1').addClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-2').removeClass("carwashes__car-active")
 
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-1').addClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-2').removeClass("carwashes__car-active")
+
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program1').addClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-1').addClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-1-' + window.carwashes__car_btn_active).addClass("carwashes__car-element-active")
+  .on "start", ->
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program2').removeClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-2').removeClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-2').removeClass("carwashes__car-element-passive-r")
+  .on "end", ->
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program1').removeClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program2').removeClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-1').removeClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-2').removeClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-1-' + window.carwashes__car_btn_active).removeClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-2').removeClass("carwashes__car-element-active")
   .addTo(window.controller)
   #.addIndicators()
 
@@ -102,18 +115,6 @@ carwashes__scrollMagicInit = ->
     offset: window.carwashes__screen_h
     triggerHook: 0
   .on "start end", ->
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program1').removeClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program2').addClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program3').removeClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-1').removeClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-2').addClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-3').removeClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-1-' + window.carwashes__car_btn_active).removeClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-2').addClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-3').removeClass("carwashes__car-element-active")
-
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-1').removeClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-2').addClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-3').removeClass("carwashes__car-active")
@@ -121,6 +122,34 @@ carwashes__scrollMagicInit = ->
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-1').removeClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-2').addClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-3').removeClass("carwashes__car-active")
+
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program2').addClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-2').addClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-2').addClass("carwashes__car-element-active")
+  .on "start", ->
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program1').removeClass("carwashes__car-element-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program2').addClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program3').removeClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-1').removeClass("carwashes__car-element-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-2').addClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-3').removeClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-1-' + window.carwashes__car_btn_active).removeClass("carwashes__car-element-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-2').addClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-3').removeClass("carwashes__car-element-passive-r")
+  .on "end", ->
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program2').removeClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program3').removeClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-2').removeClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-3').removeClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-2').removeClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-3').removeClass("carwashes__car-element-active")
   .addTo(window.controller)
   #.addIndicators()
 
@@ -130,26 +159,44 @@ carwashes__scrollMagicInit = ->
     offset: window.carwashes__screen_h * 2
     triggerHook: 0
   .on "start end", ->
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program2').removeClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program3').addClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program4').removeClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-2').removeClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-3').addClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-4').removeClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-2').removeClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-3').addClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-4').removeClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').removeClass("carwashes__car-element-active")
-
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-2').removeClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-3').addClass("carwashes__car-active")
 
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-2').removeClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-3').addClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-4').removeClass("carwashes__car-active")
+
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program3').addClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-3').addClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-3').addClass("carwashes__car-element-active")
+  .on "start", ->
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program2').removeClass("carwashes__car-element-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program3').addClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program4').removeClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-2').removeClass("carwashes__car-element-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-3').addClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-4').removeClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-2').removeClass("carwashes__car-element-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-3').addClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-4').removeClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').removeClass("carwashes__car-element-passive-r")
+  .on "end", ->
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program3').removeClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program4').removeClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-3').removeClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-4').removeClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-3').removeClass("carwashes__car-element-passive-r")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-4').removeClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').removeClass("carwashes__car-element-active")
   .addTo(window.controller)
   #.addIndicators()
 
@@ -159,21 +206,30 @@ carwashes__scrollMagicInit = ->
     offset: window.carwashes__screen_h * 3
     triggerHook: 0
   .on "start end", ->
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program3').removeClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__program4').addClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-3').removeClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-4').addClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-3').removeClass("carwashes__car-element-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-4').addClass("carwashes__car-element-active")
-
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').addClass("carwashes__car-element-active")
-
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-3').removeClass("carwashes__car-active")
 
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-3').removeClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-4').addClass("carwashes__car-active")
+
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program4').addClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-4').addClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-4').addClass("carwashes__car-element-active")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').addClass("carwashes__car-element-active")
+  .on "start", ->
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program3').removeClass("carwashes__car-element-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__program4').addClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-3').removeClass("carwashes__car-element-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__info-4').addClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-3').removeClass("carwashes__car-element-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right-4').addClass("carwashes__car-element-passive-r")
+
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').addClass("carwashes__car-element-passive-r")
   .addTo(window.controller)
   #.addIndicators()
 
@@ -430,20 +486,8 @@ carwashes__onResize = ->
   if window.carwashes__screen_h < 650
     carScale = window.carwashes__screen_h / 650
     $('.carwashes__section.carwashes__main_car_animation .carwashes__content-container').css('transform', 'scale(' + carScale + ') translateX(-50%) translateY(-50%)')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info').css('font-size', '15px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info').css('line-height', '22px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right').css('font-size', '15px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right').css('line-height', '22px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').css('font-size', '15px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').css('line-height', '22px')
   else
     $('.carwashes__section.carwashes__main_car_animation .carwashes__content-container').css('transform', 'scale(1) translateX(-50%) translateY(-50%)')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info').css('font-size', '16px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__info').css('line-height', '26px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right').css('font-size', '16px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-right').css('line-height', '26px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').css('font-size', '16px')
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__bottom-left').css('line-height', '26px')
 
   if window.carwashes__sm_inited
     carwashes__scrollMagicUpdate()
