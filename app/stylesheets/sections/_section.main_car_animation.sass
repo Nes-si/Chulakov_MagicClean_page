@@ -101,7 +101,7 @@
           line-height: 22px
 
 
-      .carwashes__info-1
+      .carwashes__info_1
         width: 400px
 
         .carwashes__button
@@ -121,7 +121,7 @@
           color: white
           background-color: #3aa8b3
 
-      .carwashes__info-2
+      .carwashes__info_2
         img
           opacity: 1
           margin-bottom: 10px
@@ -132,7 +132,7 @@
         p:last-of-type
           font-weight: 600
 
-      .carwashes__info-4
+      .carwashes__info_4
         p:first-child
           margin-bottom: 20px
 
@@ -214,14 +214,14 @@
 
     .carwashes__info-bottom-cont
       position: absolute
-      width: 100%
       left: 0
+      bottom: 3vh
+      width: 100%
+      height: 100px
       padding: 0 30px
       +tablet
         padding: 0 20px
 
-      height: 100px
-      bottom: 3vh
       font-size: 0
       text-align: left
 
@@ -274,7 +274,10 @@
             opacity: 0.7
 
 
-        .carwashes__bottom-right-1-1, .carwashes__bottom-right-1-2
+
+        .carwashes__bottom-right_1_item
+          position: absolute
+
           .carwashes__title
             font-weight: 600
             opacity: 0.7
@@ -297,11 +300,11 @@
   opacity: 0
   transition-delay: 0ms
   transition-duration: 500ms, 500ms
-  transform: translate3D(-50px, 0, 0)
+  transform: translate3D(-50px, 0, 0) !important
   transition-property: opacity, transform
 
 .carwashes__car-element-passive-r
-  transform: translate3D(50px, 0, 0)
+  transform: translate3D(50px, 0, 0) !important
 
 .carwashes__car-element-active
   opacity: 1 !important
@@ -324,4 +327,3 @@
   left: 30px !important
   +tablet
     left: 20px !important
-  transform: translateX(0%) !important
