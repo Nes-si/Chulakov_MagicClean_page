@@ -114,7 +114,6 @@ carwashes__scrollMagicInit = ->
   .on "start end", ->
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-1').removeClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-2').addClass("carwashes__car-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__car-3').removeClass("carwashes__car-active")
 
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-1').removeClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-2').addClass("carwashes__car-active")
@@ -157,7 +156,7 @@ carwashes__scrollMagicInit = ->
     triggerHook: 0
   .on "start end", ->
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-2').removeClass("carwashes__car-active")
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__car-3').addClass("carwashes__car-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__car-4').removeClass("carwashes__car-active")
 
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-2').removeClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-3').addClass("carwashes__car-active")
@@ -198,7 +197,7 @@ carwashes__scrollMagicInit = ->
     offset: window.carwashes__screen_h * 3
     triggerHook: 0
   .on "start end", ->
-    $('.carwashes__section.carwashes__main_car_animation .carwashes__car-3').removeClass("carwashes__car-active")
+    $('.carwashes__section.carwashes__main_car_animation .carwashes__car-4').addClass("carwashes__car-active")
 
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-3').removeClass("carwashes__car-active")
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-4').addClass("carwashes__car-active")
@@ -354,7 +353,7 @@ carwashes__iPadScrollInit = ->
 
   ipadPageChange = (pageFrom, pageTo) ->
     $('.carwashes__section.carwashes__main_car_animation .carwashes__car-' + pageTo).addClass("carwashes__car-active")
-    if pageFrom != 4
+    if pageFrom != 3
       $('.carwashes__section.carwashes__main_car_animation .carwashes__car-' + pageFrom).removeClass("carwashes__car-active")
 
     $('.carwashes__section.carwashes__main_car_animation .carwashes__round-' + pageTo).addClass("carwashes__car-active")
