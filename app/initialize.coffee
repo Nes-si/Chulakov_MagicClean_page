@@ -580,6 +580,7 @@ $ ->
         .addClass('carwashes__pult-td-active')
       $(elem).find('p')
         .addClass('carwashes__pult-td-active')
+      $('.carwashes__section .carwashes__img_part_' + i).css('opacity', '1')
       window.carwashes__pult_elem = i
     , (e) ->
       $(elem).find('.carwashes__caption')
@@ -587,6 +588,7 @@ $ ->
       $(elem).find('p')
         .removeClass('carwashes__pult-td-active')
       window.carwashes__pult_elem = 0
+      $('.carwashes__section .carwashes__img_part_' + i).css('opacity', '0')
     )
 
 
