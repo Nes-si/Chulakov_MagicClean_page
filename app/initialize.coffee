@@ -622,6 +622,10 @@ $ ->
   else
     carwashes__scrollMagicInit()
 
+  $("<img />").attr('src', '../pics/section.request.horse_red.svg')
+  $("<img />").attr('src', '../pics/section.request.tool_red.svg')
+  $("<img />").attr('src', '../pics/section.request.set_red.svg')
+
 
 
 $(window).on('resize', debounce(carwashes__onResize, 150, false))

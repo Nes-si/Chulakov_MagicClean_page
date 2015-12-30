@@ -55,19 +55,30 @@
     .carwashes__block.carwashes__menu
       margin-top: 12%
 
-      .carwashes__menu.carwashes__item
+      a.carwashes__item
         display: inline-block
         margin-right: 19%
+        text-decoration: none
 
         font-size: 16px
+        color: #52b7f7
+        text-weight: 400
 
         img
           margin-bottom: 15px
+          display: inline
+        img.red
+          display: none
 
-        p
-          color: #52b7f7
-          text-weight: 600
-
-      .carwashes__menu.carwashes__item:last-child
+      a.carwashes__item:last-child
         margin-right: 0
+
+      a.carwashes__item:hover
+        color: #4185B8
+        cursor: pointer
+
+        img
+          display: none
+        img.red
+          display: inline-block
 
